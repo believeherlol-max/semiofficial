@@ -408,7 +408,7 @@
     </div>
 
     <script>
-        let siteData = {
+        let siteData = JSON.parse(localStorage.getItem('semiSiteData')) || {
             staff: {
                 owners: [
                     { name: 'y', id: '314643233625997313', avatar: 'https://media.discordapp.net/attachments/1482684122869665874/1535791322600833064/image.png?ex=6a790ca0&is=6a77bb20&hm=63b3ac82558c5fad5fe99c38f624bc2948a15826beb146c305921573b4f2a37b&=&format=webp&quality=lossless' }
@@ -419,6 +419,10 @@
                 moderators: [
                     { name: 'merzi', id: '1515530887532380170', avatar: 'https://cdn.discordapp.com/avatars/1515530887532380170/a0e91ae073dfece3d2b85b3e5685cc10.webp?size=1024' }
                 ]
+            },
+            statuses: {
+                "Spoofer": "green",
+                "Cleaner": "green"
             },
             popupConfig: {
                 title: 'Special Announcement',
@@ -431,6 +435,30 @@
         };
 
         let popupTimer = null;
+
+        function saveToStorage() {
+            localStorage.setItem('semiSiteData', JSON.stringify(siteData));
+        }
+
+        function applyStoredStatuses() {
+            if (!siteData.statuses) return;
+            document.querySelectorAll('#servicesContainer > div').forEach(row => {
+                const name = row.getAttribute('data-name');
+                const status = siteData.statuses[name];
+                if (status) {
+                    const indicator = row.querySelector('.status-indicator');
+                    const dot = indicator.querySelector('div');
+                    indicator.setAttribute('data-status-key', status);
+                    if (status === 'green') {
+                        dot.className = 'tiny-dot tiny-dot-green';
+                    } else if (status === 'orange') {
+                        dot.className = 'tiny-dot tiny-dot-orange';
+                    } else {
+                        dot.className = 'tiny-dot tiny-dot-red';
+                    }
+                }
+            });
+        }
 
         function showPopup() {
             const overlay = document.getElementById('popupOverlay');
@@ -466,6 +494,8 @@
             siteData.popupConfig.timeUnit = document.getElementById('popupTimeUnit').value;
             siteData.popupConfig.timeValue = parseInt(document.getElementById('popupTimeValue').value) || 1;
 
+            saveToStorage();
+
             if (popupTimer) clearInterval(popupTimer);
             let intervalMs = 60000;
             const val = parseInt(siteData.popupConfig.timeValue) || 1;
@@ -483,7 +513,7 @@
                 showPopup();
             }, intervalMs);
 
-            alert('Pop-up configuration updated and timer started successfully!');
+            alert('Pop-up configuration updated and saved!');
             showPopup();
         }
 
@@ -545,6 +575,7 @@
                 avatar: avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60'
             });
 
+            saveToStorage();
             renderStaffDirectory();
             document.getElementById('newStaffName').value = '';
             document.getElementById('newStaffId').value = '';
@@ -572,7 +603,6 @@
             }, 150);
         }, { passive: true });
 
-        // Falling particles setup
         const particles = Array.from({ length: 70 }, () => ({
             x: Math.random() * width,
             y: Math.random() * height,
@@ -616,6 +646,16 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             renderStaffDirectory();
+            applyStoredStatuses();
+            
+            if (siteData.popupConfig) {
+                document.getElementById('popupTitleInput').value = siteData.popupConfig.title;
+                document.getElementById('popupMsgInput').value = siteData.popupConfig.message;
+                document.getElementById('popupImageInput').value = siteData.popupConfig.imageUrl;
+                document.getElementById('popupUrlInput').value = siteData.popupConfig.linkUrl;
+                document.getElementById('popupTimeUnit').value = siteData.popupConfig.timeUnit;
+                document.getElementById('popupTimeValue').value = siteData.popupConfig.timeValue;
+            }
         });
 
         function escapeHtml(str) {
@@ -673,21 +713,11 @@
             const name = document.getElementById('serviceSelect').value;
             const status = document.getElementById('statusSelect').value;
 
-            document.querySelectorAll('#servicesContainer > div').forEach(row => {
-                if (row.getAttribute('data-name') === name) {
-                    const indicator = row.querySelector('.status-indicator');
-                    const dot = indicator.querySelector('div');
-
-                    indicator.setAttribute('data-status-key', status);
-                    if (status === 'green') {
-                        dot.className = 'tiny-dot tiny-dot-green';
-                    } else if (status === 'orange') {
-                        dot.className = 'tiny-dot tiny-dot-orange';
-                    } else {
-                        dot.className = 'tiny-dot tiny-dot-red';
-                    }
-                }
-            });
+            if (!siteData.statuses) siteData.statuses = {};
+            siteData.statuses[name] = status;
+            saveToStorage();
+            applyStoredStatuses();
+            alert('Status updated and saved successfully!');
         }
     </script>
 </body>
