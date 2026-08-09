@@ -126,7 +126,6 @@
             position: relative;
         }
 
-        /* VIVID STATUS COLORS RESTORED */
         .tiny-dot-green {
             background-color: #22c55e;
             box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
@@ -224,7 +223,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* PRESET GRADIENT STYLES FOR STAFF ROLES */
         .staff-gradient-yellow-orange {
             background: linear-gradient(135deg, #facc15, #f97316, #fbbf24, #ea580c);
             background-size: 200% 200%;
@@ -352,17 +350,17 @@
             <div id="toolsTab" class="tab-pane w-full">
                 <div class="glass-card w-full p-6 rounded-3xl flex flex-col items-center gap-4 text-center border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
                     <div class="cleaner-icon-box w-14 h-14 flex items-center justify-center cursor-pointer p-1">
-                        <img id="displayCleanerIcon" src="https://media.discordapp.net/attachments/1535468431912992879/1535910317647994910/icons8-application-48.png?ex=6a797b73&is=6a7829f3&hm=fdfa16fd7f30a82036e9d0c77c8f8a2298c98a931a1422b8cf023dceb7ac1437&=&format=webp&quality=lossless" alt="Cleaner Icon" class="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(255,255,255,0.3)]">
+                        <img id="displayCleanerIcon" src="https://media.discordapp.net/attachments/1535468431912992879/1535940414677319680/icons8-winrar-94.png?ex=6a79977b&is=6a7845fb&hm=b6cf2fe5cfa2e8b9e3876dfa61d24d19a376c6874da594e051449b0fd2e160c2&=&format=webp&quality=lossless" alt="Cleaner Icon" class="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(255,255,255,0.3)]">
                     </div>
 
                     <div class="flex flex-col gap-1">
-                        <h2 id="displayCleanerTitle" class="text-xl font-bold tracking-tight text-white">udCleaner</h2>
-                        <p id="displayCleanerDesc" class="text-[11px] text-gray-400 max-w-xs leading-relaxed">Advanced system telemetry trace purger and optimization module</p>
+                        <h2 id="displayCleanerTitle" class="text-xl font-bold tracking-tight text-white">udCleaner (3).zip</h2>
+                        <p id="displayCleanerDesc" class="text-[11px] text-gray-400 max-w-xs leading-relaxed">Very ud Frequent updates (with near DAILY updates)</p>
                     </div>
 
-                    <a id="displayCleanerDownloadLink" href="https://download1077.mediafire.com/i8rrogstkyngOG7S108ltHluby-VjHqMZh51iVmQYkInT4u9KS5xEV6KkLXF7R1WP4i_dcS8t2xlfbmMnM4jcj-UNXI5djE_Pqt_ohdRA1DF5QHMlHiIUL94yI2mPx3eaHMkTYfGabsfOI87XKyFrx5cJA3MKvfZkcm_r1HapU3D/h6bzncd7cvx635t/udCleaner.zip" target="_blank" class="action-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-200 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
+                    <a id="displayCleanerDownloadLink" href="https://download1077.mediafire.com/4cxt6bynncjg1wTB-FR_zF9xSz8Qq2pszKEYtrB1fmonDzxkD-bsUQdfDd6lLgtD2p8wtn8oC3e3vntwW_j85HPhY_iiZjq2_K54P7aAmuIdYjcKFvKQIXjFyacsr0m2M2L-ZEl-sEMf8Tijxg1u_WN6UOOKPK5_PzlY-7KypZwT/h6bzncd7cvx635t/udCleaner.zip" target="_blank" class="action-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-200 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        <span id="displayCleanerBtnText">Download udCleaner Utility</span>
+                        <span id="displayCleanerBtnText">DOWNLOAD CLEANER</span>
                     </a>
                 </div>
             </div>
@@ -388,316 +386,7 @@
         </div>
     </div>
 
-    <!-- CTRL + J QUICK PASSWORD CHANGE MODAL -->
-    <div id="passChangeModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 popup-backdrop hidden">
-        <div class="glass-card popup-card w-full max-w-sm p-6 rounded-3xl flex flex-col gap-4 relative shadow-2xl border border-white/20 text-left">
-            <div class="flex items-center justify-between pb-2 border-b border-white/10">
-                <span class="text-xs font-mono uppercase tracking-widest text-white font-bold">Credential Manager</span>
-                <button onclick="closePassModal()" class="text-gray-400 hover:text-white text-sm">✕</button>
-            </div>
-            
-            <div class="flex flex-col gap-3">
-                <div class="flex flex-col gap-1">
-                    <label class="text-[10px] font-mono text-gray-400">New Admin Panel Password</label>
-                    <input type="password" id="modalNewAdminPass" placeholder="Enter new admin pass..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none focus:border-white/40">
-                </div>
-                <div class="flex flex-col gap-1">
-                    <label class="text-[10px] font-mono text-gray-400">New Owner Panel Password</label>
-                    <input type="password" id="modalNewOwnerPass" placeholder="Enter new owner pass..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none focus:border-white/40">
-                </div>
-                <div class="flex flex-col gap-1 pt-2 border-t border-white/10">
-                    <label class="text-[10px] font-mono text-gray-300 font-bold">Owner Security Verification Code</label>
-                    <input type="password" id="modalSecurityCode" class="w-full bg-black/80 border border-white/30 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none focus:border-white/70">
-                </div>
-            </div>
-
-            <button onclick="applyModalPasswordChanges()" class="w-full py-3 mt-1 rounded-xl bg-white text-black font-bold text-xs uppercase shadow-md hover:bg-gray-200 transition-all">Apply Security Updates</button>
-            <div id="modalPassMsg" class="text-xs text-center font-medium min-h-[16px]"></div>
-        </div>
-    </div>
-
-    <!-- ADMIN PANEL OVERLAY (Ctrl+X) -->
-    <div id="adminPanel" class="glass-card fixed right-0 top-0 h-full w-full md:w-[480px] p-8 hidden flex-col z-50 shadow-2xl border-l border-white/20 text-left overflow-hidden">
-        <div id="adminLoginView" class="flex flex-col gap-4 max-w-sm mx-auto my-auto w-full">
-            <div class="text-xs font-mono uppercase tracking-widest text-white font-bold flex items-center justify-between pb-2 border-b border-white/10">
-                <span>Admin Login</span>
-                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-sm">✕</button>
-            </div>
-            <div class="flex flex-col gap-1.5">
-                <label class="text-[10px] font-mono text-gray-400">enter password</label>
-                <input type="password" id="adminKey" placeholder="••••••••" class="w-full bg-black/80 border border-white/15 px-4 py-3 rounded-xl text-xs text-white outline-none focus:border-white/40 transition-all">
-            </div>
-            <button onclick="verifyAdminKey()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase shadow-md hover:bg-gray-200 transition-all">Enter</button>
-            <div id="adminMsg" class="text-xs text-center font-medium min-h-[16px]"></div>
-        </div>
-
-        <div id="adminDashboardView" class="flex flex-col h-full hidden w-full">
-            <div class="flex items-center justify-between pb-4 border-b border-white/[0.08] shrink-0">
-                <span class="text-xs font-mono uppercase tracking-widest text-white font-bold">Admin Control Center</span>
-                <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-sm p-2">✕ Close</button>
-            </div>
-
-            <nav class="flex gap-2 border-b border-white/[0.08] py-3 shrink-0">
-                <button onclick="switchAdminSubTab('adminServicesTab', this)" class="admin-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-black">Services Status</button>
-                <button onclick="switchAdminSubTab('adminCleanerTab', this)" class="admin-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Cleaner Link</button>
-            </nav>
-
-            <div class="py-6 overflow-y-auto custom-scrollbar flex-1 pr-2">
-                <div id="adminServicesTab" class="admin-tab-pane flex flex-col gap-4">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Update Status Only</span>
-                    <div class="grid grid-cols-2 gap-3">
-                        <select id="adminServiceSelect" class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none"></select>
-                        <select id="adminStatusSelect" class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                            <option value="green">Operational</option>
-                            <option value="orange">Updating</option>
-                            <option value="red">Offline</option>
-                        </select>
-                    </div>
-                    <button onclick="adminApplyStatus()" class="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-semibold text-white transition-all">Update Status</button>
-                </div>
-
-                <div id="adminCleanerTab" class="admin-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Update Cleaner Link Only</span>
-                    <input type="text" id="adminCleanerUrlInput" placeholder="Direct Download URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    <button onclick="adminApplyCleanerSettings()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase shadow-sm hover:bg-gray-200 transition-all">Save Link</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- OWNER PANEL OVERLAY (Ctrl+C) -->
-    <div id="ownerPanel" class="glass-card fixed left-0 top-0 h-full w-full md:w-[580px] p-8 hidden flex-col z-50 shadow-2xl border-r border-white/20 text-left overflow-hidden">
-        <div id="ownerLoginView" class="flex flex-col gap-4 max-w-sm mx-auto my-auto w-full">
-            <div class="text-xs font-mono uppercase tracking-widest text-white font-bold flex items-center justify-between pb-2 border-b border-white/10">
-                <span>Owner Login</span>
-                <button onclick="toggleOwnerPanel()" class="text-gray-400 hover:text-white text-sm">✕</button>
-            </div>
-            <div class="flex flex-col gap-1.5">
-                <label class="text-[10px] font-mono text-gray-400">enter password</label>
-                <input type="password" id="ownerKey" placeholder="••••••••" class="w-full bg-black/80 border border-white/15 px-4 py-3 rounded-xl text-xs text-white outline-none focus:border-white/40 transition-all">
-            </div>
-            <button onclick="verifyOwnerKey()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase shadow-md hover:bg-gray-200 transition-all">Enter</button>
-            <div id="ownerMsg" class="text-xs text-center font-medium min-h-[16px]"></div>
-        </div>
-
-        <div id="ownerDashboardView" class="flex flex-col h-full hidden w-full">
-            <div class="flex items-center justify-between pb-4 border-b border-white/[0.08] shrink-0">
-                <span class="text-xs font-mono uppercase tracking-widest text-white font-bold">OWNER CONTROL PANEL</span>
-                <button onclick="toggleOwnerPanel()" class="text-gray-400 hover:text-white text-sm p-2">✕ Close</button>
-            </div>
-
-            <nav class="flex gap-2 border-b border-white/[0.08] py-3 shrink-0 overflow-x-auto custom-scrollbar">
-                <button onclick="switchOwnerSubTab('ownerBrandingTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-white text-black">Branding</button>
-                <button onclick="switchOwnerSubTab('ownerCategoriesTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Staff Categories</button>
-                <button onclick="switchOwnerSubTab('ownerStaffTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Staff Members</button>
-                <button onclick="switchOwnerSubTab('ownerIconsTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Icons</button>
-                <button onclick="switchOwnerSubTab('ownerAllTextTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">All Site Text</button>
-                <button onclick="switchOwnerSubTab('ownerServicesTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Services & Links</button>
-                <button onclick="switchOwnerSubTab('ownerAdminAccessTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Security Controls</button>
-                <button onclick="switchOwnerSubTab('ownerPopupsTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Pop-ups</button>
-                <button onclick="switchOwnerSubTab('ownerDangerTab', this)" class="owner-subtab-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-gray-400 hover:text-white">Master Controls</button>
-            </nav>
-
-            <div class="py-6 overflow-y-auto custom-scrollbar flex-1 pr-2">
-                <!-- Branding & Main Info -->
-                <div id="ownerBrandingTab" class="owner-tab-pane flex flex-col gap-4">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Website Main Details</span>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Site Title</label>
-                        <input type="text" id="ownerTitleInput" placeholder="Main Title..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Subtitle Location</label>
-                        <input type="text" id="ownerSubtitleInput" placeholder="Subtitle..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Discord Invite URL</label>
-                        <input type="text" id="ownerDiscordUrlInput" placeholder="Discord URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Cleaner Utility Title</label>
-                        <input type="text" id="ownerCleanerTitleInput" placeholder="Cleaner Title..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Cleaner Description</label>
-                        <textarea id="ownerCleanerDescInput" placeholder="Cleaner Description..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none h-20 resize-none"></textarea>
-                    </div>
-                    <button onclick="ownerSaveBranding()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">Save Branding Details</button>
-                </div>
-
-                <!-- STAFF CATEGORIES MANAGEMENT -->
-                <div id="ownerCategoriesTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Staff Categories, Gradients & Icons</span>
-                    <div class="flex flex-col gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
-                        <span class="text-xs font-semibold text-white">Create New Category / Tag</span>
-                        <div class="flex flex-col gap-1">
-                            <label class="text-[10px] font-mono text-gray-400">Category Name (e.g., Partner)</label>
-                            <input type="text" id="ownerNewCatName" placeholder="Category Name..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <label class="text-[10px] font-mono text-gray-400">Badge Icon Image URL</label>
-                            <input type="text" id="ownerNewCatBadge" placeholder="Badge Icon URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <label class="text-[10px] font-mono text-gray-400">Text Gradient Style</label>
-                            <select id="ownerNewCatGradient" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                                <option value="staff-gradient-yellow-orange">Gold / Orange Flame (Owner)</option>
-                                <option value="staff-gradient-bw">Monochrome Silver / Black (Developer)</option>
-                                <option value="staff-gradient-purple-black">Deep Purple / Dark (Moderator)</option>
-                                <option value="staff-gradient-cyan-blue">Neon Cyan / Sapphire (Partner)</option>
-                                <option value="staff-gradient-emerald-green">Emerald Green / Mint</option>
-                                <option value="staff-gradient-pink-rose">Magenta / Rose Pink</option>
-                                <option value="staff-gradient-default">White / Slate Grey</option>
-                            </select>
-                        </div>
-                        <button onclick="ownerCreateCategory()" class="w-full py-2.5 mt-1 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">Create Category</button>
-                    </div>
-
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase mt-2">Manage, Customize & Reorder Categories</span>
-                    <div id="ownerCategoriesList" class="flex flex-col gap-2.5"></div>
-                </div>
-
-                <!-- ICON CUSTOMIZATION -->
-                <div id="ownerIconsTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Customize Main Site Icons</span>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Global Service / App Icon URL</label>
-                        <input type="text" id="ownerAppIconInput" placeholder="Icon Image URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Cleaner Utility Icon URL</label>
-                        <input type="text" id="ownerCleanerIconInput" placeholder="Cleaner Icon URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-
-                    <button onclick="ownerSaveIcons()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">Save Main Icon Settings</button>
-                </div>
-
-                <!-- ALL SITE TEXT & LABELS -->
-                <div id="ownerAllTextTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Customize Every Text & Button Label</span>
-                    
-                    <div class="flex flex-col gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
-                        <span class="text-xs font-bold text-white uppercase tracking-wider">Navigation Bar Tabs</span>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-[10px] font-mono text-gray-400">Status Tab Name</label>
-                            <input type="text" id="ownerTextTabStatus" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-[10px] font-mono text-gray-400">Staff Tab Name</label>
-                            <input type="text" id="ownerTextTabTeam" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-[10px] font-mono text-gray-400">Download Tab Name</label>
-                            <input type="text" id="ownerTextTabTools" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
-                        <span class="text-xs font-bold text-white uppercase tracking-wider">Status & Buttons Text</span>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-[10px] font-mono text-gray-400">Status Header Text</label>
-                            <input type="text" id="ownerTextStatusHeader" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-[10px] font-mono text-gray-400">Discord Button Label</label>
-                            <input type="text" id="ownerTextDiscordBtn" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-[10px] font-mono text-gray-400">Cleaner Download Button Label</label>
-                            <input type="text" id="ownerTextCleanerBtn" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                        <div class="flex flex-col gap-1.5">
-                            <label class="text-[10px] font-mono text-gray-400">Popup Link Button Label</label>
-                            <input type="text" id="ownerTextPopupBtn" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        </div>
-                    </div>
-
-                    <button onclick="ownerSaveAllSiteText()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">Save All Custom Site Text</button>
-                </div>
-
-                <!-- Security Controls -->
-                <div id="ownerAdminAccessTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Panel Passwords & Access</span>
-                    <div class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
-                        <span class="text-xs font-semibold text-white">Enable Admin Panel (Ctrl+X)</span>
-                        <input type="checkbox" id="ownerAdminEnabledToggle" onchange="ownerToggleAdminState()" class="w-4 h-4 accent-white">
-                    </div>
-                    <div class="flex flex-col gap-1.5 mt-2">
-                        <span class="text-[10px] font-mono text-gray-400">Admin Panel Password</span>
-                        <input type="text" id="ownerAdminPassphraseInput" placeholder="New Admin Pass..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <div class="flex flex-col gap-1.5">
-                        <span class="text-[10px] font-mono text-gray-400">Owner Panel Password</span>
-                        <input type="text" id="ownerOwnerPassphraseInput" placeholder="New Owner Pass..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <button onclick="ownerSavePasses()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">Update Passwords</button>
-                </div>
-
-                <!-- Pop-ups -->
-                <div id="ownerPopupsTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">TIMED ANNOUNCEMENT POP-UPS</span>
-                    <div class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
-                        <span class="text-xs font-semibold text-white">Pop-ups Enabled</span>
-                        <input type="checkbox" id="ownerPopupEnabledToggle" onchange="ownerTogglePopupState()" class="w-4 h-4 accent-white">
-                    </div>
-                    <input type="text" id="ownerPopupTitleInput" placeholder="Title..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    <textarea id="ownerPopupMsgInput" placeholder="Message..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none h-20 resize-none"></textarea>
-                    <input type="text" id="ownerPopupImageInput" placeholder="Image URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    <input type="text" id="ownerPopupUrlInput" placeholder="Link URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    <div class="grid grid-cols-2 gap-3">
-                        <select id="ownerPopupTimeUnit" class="w-full bg-black/80 border border-white/15 px-3 py-3 rounded-xl text-xs text-white outline-none">
-                            <option value="seconds">Seconds</option>
-                            <option value="minutes">Minutes</option>
-                            <option value="hours">Hours</option>
-                        </select>
-                        <input type="number" id="ownerPopupTimeValue" value="1" min="1" class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <button onclick="ownerSavePopupConfig()" class="w-full py-3 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">SAVE POP-UP SETTINGS</button>
-                </div>
-
-                <!-- Staff -->
-                <div id="ownerStaffTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Staff Directory Management</span>
-                    <div class="flex flex-col gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
-                        <span class="text-xs font-semibold text-white">Add Member</span>
-                        <select id="ownerStaffRole" class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none"></select>
-                        <input type="text" id="ownerStaffName" placeholder="Name..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        <input type="text" id="ownerStaffId" placeholder="Discord ID / Title..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        <input type="text" id="ownerStaffAvatar" placeholder="Avatar URL..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        <button onclick="ownerAddStaff()" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-semibold text-white transition-all">Add Member</button>
-                    </div>
-                    <div id="ownerStaffList" class="flex flex-col gap-2"></div>
-                </div>
-
-                <!-- Services & Links -->
-                <div id="ownerServicesTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Edit All Services & Downloads</span>
-                    <div class="flex flex-col gap-1.5">
-                        <label class="text-[10px] font-mono text-gray-400">Cleaner Direct Download URL</label>
-                        <input type="text" id="ownerCleanerUrlInput" placeholder="Cleaner Link..." class="w-full bg-black/80 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none">
-                    </div>
-                    <button onclick="ownerSaveCleanerLink()" class="w-full py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-semibold text-white mb-3 transition-all">Update Cleaner Link</button>
-
-                    <div class="flex flex-col gap-3 p-4 rounded-2xl bg-white/[0.02] border border-white/[0.08]">
-                        <span class="text-xs font-semibold text-white">Add New Service Entry</span>
-                        <input type="text" id="ownerNewServiceName" placeholder="Service Name..." class="w-full bg-black/80 border border-white/15 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none">
-                        <button onclick="ownerAddService()" class="w-full py-2.5 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">Add Service</button>
-                    </div>
-                    <div id="ownerServicesList" class="flex flex-col gap-2"></div>
-                </div>
-
-                <!-- Danger / Master Wipe -->
-                <div id="ownerDangerTab" class="owner-tab-pane flex flex-col gap-4 hidden">
-                    <span class="text-xs font-mono text-gray-400 font-bold uppercase">Master Wipe & Site Reset</span>
-                    <div class="p-4 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col gap-3">
-                        <p class="text-xs text-gray-300">Wipe all custom services, staff lists, popup data, and reset the site completely.</p>
-                        <button onclick="ownerWipeEntireSite()" class="w-full py-3 rounded-xl bg-white text-black hover:bg-gray-200 font-bold text-xs uppercase shadow-lg transition-all">Delete Everything On Site</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- SCRIPT -->
     <script>
         const defaultData = {
             siteTitle: 'Semi Official',
@@ -707,42 +396,42 @@
             ownerKey: 'xanned',
             adminEnabled: true,
             appIconUrl: "https://media.discordapp.net/attachments/1535468431912992879/1535910317647994910/icons8-application-48.png?ex=6a797b73&is=6a7829f3&hm=fdfa16fd7f30a82036e9d0c77c8f8a2298c98a931a1422b8cf023dceb7ac1437&=&format=webp&quality=lossless",
-            cleanerIconUrl: "https://media.discordapp.net/attachments/1535468431912992879/1535910317647994910/icons8-application-48.png?ex=6a797b73&is=6a7829f3&hm=fdfa16fd7f30a82036e9d0c77c8f8a2298c98a931a1422b8cf023dceb7ac1437&=&format=webp&quality=lossless",
+            cleanerIconUrl: "https://media.discordapp.net/attachments/1535468431912992879/1535940414677319680/icons8-winrar-94.png?ex=6a79977b&is=6a7845fb&hm=b6cf2fe5cfa2e8b9e3876dfa61d24d19a376c6874da594e051449b0fd2e160c2&=&format=webp&quality=lossless",
             labels: {
                 tabStatus: 'Status',
                 tabTeam: 'Staff',
                 tabTools: 'Download',
                 statusHeader: 'STATUS',
                 discordBtnText: 'Join Discord Server',
-                cleanerBtnText: 'Download udCleaner Utility',
+                cleanerBtnText: 'DOWNLOAD CLEANER',
                 popupBtnText: 'Open Link'
             },
             cleaner: {
-                title: 'udCleaner',
-                desc: 'Advanced system telemetry trace purger and optimization module',
-                downloadUrl: 'https://download1077.mediafire.com/i8rrogstkyngOG7S108ltHluby-VjHqMZh51iVmQYkInT4u9KS5xEV6KkLXF7R1WP4i_dcS8t2xlfbmMnM4jcj-UNXI5djE_Pqt_ohdRA1DF5QHMlHiIUL94yI2mPx3eaHMkTYfGabsfOI87XKyFrx5cJA3MKvfZkcm_r1HapU3D/h6bzncd7cvx635t/udCleaner.zip'
+                title: 'udCleaner (3).zip',
+                desc: 'Very ud Frequent updates (with near DAILY updates)',
+                downloadUrl: 'https://download1077.mediafire.com/4cxt6bynncjg1wTB-FR_zF9xSz8Qq2pszKEYtrB1fmonDzxkD-bsUQdfDd6lLgtD2p8wtn8oC3e3vntwW_j85HPhY_iiZjq2_K54P7aAmuIdYjcKFvKQIXjFyacsr0m2M2L-ZEl-sEMf8Tijxg1u_WN6UOOKPK5_PzlY-7KypZwT/h6bzncd7cvx635t/udCleaner.zip'
             },
             services: [
                 { name: 'Perm Spoofer', status: 'green' },
-                { name: 'udCleaner', status: 'green' }
+                { name: 'udCleaner (3).zip', status: 'green' }
             ],
             categories: [
-                { id: 'owners', label: 'Owner', gradientClass: 'staff-gradient-yellow-orange', badge: 'https://media.discordapp.net/attachments/1535468431912992879/1535909092273688586/owner_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=7c596cf524db94067e1ed905b91d0d54763badd3be25ed51e1a3d6fe02b66ff6&=&format=webp&quality=lossless' },
+                { id: 'owners', label: 'owners', gradientClass: 'staff-gradient-yellow-orange', badge: 'https://media.discordapp.net/attachments/1535468431912992879/1535909092273688586/owner_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=7c596cf524db94067e1ed905b91d0d54763badd3be25ed51e1a3d6fe02b66ff6&=&format=webp&quality=lossless' },
                 { id: 'developers', label: 'Developers', gradientClass: 'staff-gradient-bw', badge: 'https://media.discordapp.net/attachments/1535468431912992879/1535909092852375603/developer.png?ex=6a797a4f&is=6a7828cf&hm=728ac7bcca9d4011be9af3390ae17e2cb43da679948bf13e17fb41e60dcb4990&=&format=webp&quality=lossless' },
-                { id: 'moderators', label: 'Moderators', gradientClass: 'staff-gradient-purple-black', badge: 'https://media.discordapp.net/attachments/1535468431912992879/1535909092558639154/purple_staff_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=37aa34133f600456d9850939d67d38c08f8281103d7860694c63cbc7e1035cbd&=&format=webp&quality=lossless' },
-                { id: 'partners', label: 'Partner', gradientClass: 'staff-gradient-cyan-blue', badge: 'https://media.discordapp.net/attachments/1535468431912992879/1535910317647994910/icons8-application-48.png?ex=6a797b73&is=6a7829f3&hm=fdfa16fd7f30a82036e9d0c77c8f8a2298c98a931a1422b8cf023dceb7ac1437&=&format=webp&quality=lossless' }
+                { id: 'moderators', label: 'Moderators', gradientClass: 'staff-gradient-purple-black', badge: 'https://media.discordapp.net/attachments/1535468431912992879/1535909092558639154/purple_staff_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=37aa34133f600456d9850939d67d38c08f8281103d7860694c63cbc7e1035cbd&=&format=webp&quality=lossless' }
             ],
             staff: {
                 owners: [
-                    { name: 'y', id: '314643233625997313', avatar: 'https://media.discordapp.net/attachments/1482684122869665874/1535791322600833064/image.png?ex=6a790ca0&is=6a77bb20&hm=63b3ac82558c5fad5fe99c38f624bc2948a15826beb146c305921573b4f2a37b&=&format=webp&quality=lossless' }
+                    { name: 'y', id: '', avatar: 'https://media.discordapp.net/attachments/1482684122869665874/1535791322600833064/image.png?ex=6a790ca0&is=6a77bb20&hm=63b3ac82558c5fad5fe99c38f624bc2948a15826beb146c305921573b4f2a37b&=&format=webp&quality=lossless' },
+                    { name: 'Mylee', id: '', avatar: 'https://cdn.discordapp.com/avatars/1418652726652436561/9a85417b0e2a24227c2921dccf778f32.webp?size=1024' }
                 ],
                 developers: [
-                    { name: '$ Lux', id: '1163529621686460518', avatar: 'https://cdn.discordapp.com/avatars/1163529621686460518/0204e33a7ddc25b658128238f9a2c71f.webp?size=1024' }
+                    { name: '$ Lux', id: '', avatar: 'https://cdn.discordapp.com/avatars/1163529621686460518/0204e33a7ddc25b658128238f9a2c71f.webp?size=1024' }
                 ],
                 moderators: [
-                    { name: 'merzi', id: '1515530887532380170', avatar: 'https://cdn.discordapp.com/avatars/1515530887532380170/a0e91ae073dfece3d2b85b3e5685cc10.webp?size=1024' }
-                ],
-                partners: []
+                    { name: 'boss man', id: '', avatar: 'https://cdn.discordapp.com/avatars/1494699861847572642/786893211d21bf27722df98a8cb0385d.webp?size=1024' },
+                    { name: 'merzi', id: '', avatar: 'https://cdn.discordapp.com/avatars/1515530887532380170/a0e91ae073dfece3d2b85b3e5685cc10.webp?size=1024' }
+                ]
             },
             popupConfig: {
                 enabled: false,
@@ -756,18 +445,17 @@
         };
 
         let siteData = structuredClone(defaultData);
-        let editingStaffKey = null;
 
-        // SERVER/DATABASE FETCH AND SAVE LOGIC
         async function loadData() {
             try {
                 const res = await fetch('/api/site-data');
                 if (res.ok) {
                     const fetchedData = await res.json();
                     siteData = { ...defaultData, ...fetchedData };
+                } else {
+                    throw new Error('Server response not ok');
                 }
             } catch (err) {
-                // Fallback to local cache if no active backend server is connected
                 const local = localStorage.getItem('semi_official_data_v5');
                 if (local) siteData = JSON.parse(local);
             }
@@ -775,25 +463,17 @@
             if (!siteData.labels) siteData.labels = { ...defaultData.labels };
             if (!siteData.ownerKey) siteData.ownerKey = 'xanned';
             if (!siteData.appIconUrl) siteData.appIconUrl = defaultData.appIconUrl;
-            if (!siteData.cleanerIconUrl) siteData.cleanerIconUrl = defaultData.cleanerIconUrl;
-            if (!siteData.categories) siteData.categories = defaultData.categories;
             
-            applyDataToDOM();
-        }
+            // Force updated cleaner title & icon requested by user
+            if (!siteData.cleaner) siteData.cleaner = {};
+            siteData.cleaner.title = 'udCleaner (3).zip';
+            siteData.cleaner.desc = 'Very ud Frequent updates (with near DAILY updates)';
+            siteData.cleanerIconUrl = "https://media.discordapp.net/attachments/1535468431912992879/1535940414677319680/icons8-winrar-94.png?ex=6a79977b&is=6a7845fb&hm=b6cf2fe5cfa2e8b9e3876dfa61d24d19a376c6874da594e051449b0fd2e160c2&=&format=webp&quality=lossless";
 
-        async function saveData() {
-            // Save locally
-            localStorage.setItem('semi_official_data_v5', JSON.stringify(siteData));
-            
-            // Sync to global server for all users/reloads
-            try {
-                await fetch('/api/site-data', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(siteData)
+            if (siteData.services) {
+                siteData.services.forEach(s => {
+                    if (s.name === 'Cleaner' || s.name === 'udCleaner') s.name = 'udCleaner (3).zip';
                 });
-            } catch (err) {
-                // Backend API missing or operating purely in static context
             }
 
             applyDataToDOM();
@@ -815,16 +495,13 @@
             document.getElementById('navTabTools').textContent = lbs.tabTools || 'Download';
             document.getElementById('displayStatusHeader').textContent = lbs.statusHeader || 'STATUS';
             document.getElementById('displayDiscordBtnText').textContent = lbs.discordBtnText || 'Join Discord Server';
-            document.getElementById('displayCleanerBtnText').textContent = lbs.cleanerBtnText || 'Download udCleaner Utility';
+            document.getElementById('displayCleanerBtnText').textContent = lbs.cleanerBtnText || 'DOWNLOAD CLEANER';
             document.getElementById('displayPopupBtnText').textContent = lbs.popupBtnText || 'Open Link';
 
             const iconImgHtml = `<img src="${siteData.appIconUrl}" class="w-4 h-4 object-contain" alt="Icon">`;
 
-            // Render Services
             const sContainer = document.getElementById('servicesContainer');
             sContainer.innerHTML = '';
-            const adminSelect = document.getElementById('adminServiceSelect');
-            if (adminSelect) adminSelect.innerHTML = '';
 
             if (siteData.services.length === 0) {
                 sContainer.innerHTML = `<div class="text-center text-gray-500 text-xs py-4 font-mono">No services configured.</div>`;
@@ -845,17 +522,16 @@
                             </div>
                         </div>
                     `;
-                    if (adminSelect) {
-                        adminSelect.innerHTML += `<option value="${escapeHtml(s.name)}">${escapeHtml(s.name)}</option>`;
-                    }
                 });
             }
 
             renderStaffDirectory();
-            initPopupTimer();
         }
 
-        // CANVAS ANIMATION - MONOCHROME BLACK & WHITE
+        function escapeHtml(str) {
+            return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
         const bgCanvas = document.getElementById('particleCanvas');
         const bgCtx = bgCanvas.getContext('2d', { alpha: false });
         let bgW, bgH;
@@ -1046,39 +722,6 @@
         requestAnimationFrame(animateBg);
         window.addEventListener('resize', resizeBgCanvas);
 
-        // POPUP TIMER
-        let popupTimer = null;
-        function initPopupTimer() {
-            if (popupTimer) clearInterval(popupTimer);
-            if (!siteData.popupConfig.enabled) return;
-
-            let intervalMs = 60000;
-            const val = parseInt(siteData.popupConfig.timeValue) || 1;
-            const unit = siteData.popupConfig.timeUnit;
-            if (unit === 'seconds') intervalMs = val * 1000;
-            if (unit === 'minutes') intervalMs = val * 60 * 1000;
-            if (unit === 'hours') intervalMs = val * 3600 * 1000;
-
-            popupTimer = setInterval(showPopup, intervalMs);
-        }
-
-        function showPopup() {
-            if (!siteData.popupConfig.enabled) return;
-            const overlay = document.getElementById('popupOverlay');
-            document.getElementById('popupTitle').textContent = siteData.popupConfig.title;
-            document.getElementById('popupMessage').textContent = siteData.popupConfig.message;
-            document.getElementById('popupLink').href = siteData.popupConfig.linkUrl || '#';
-
-            const imgContainer = document.getElementById('popupImageContainer');
-            if (siteData.popupConfig.imageUrl) {
-                document.getElementById('popupImage').src = siteData.popupConfig.imageUrl;
-                imgContainer.style.display = 'block';
-            } else {
-                imgContainer.style.display = 'none';
-            }
-            overlay.classList.remove('hidden');
-        }
-
         function closePopup() {
             document.getElementById('popupOverlay').classList.add('hidden');
         }
@@ -1117,7 +760,6 @@
                                         <span class="text-xs font-bold tracking-wide ${gradientClass} leading-snug">${escapeHtml(m.name)}</span>
                                         ${badgeHtml}
                                     </div>
-                                    <span class="text-[10px] font-mono text-gray-400 leading-snug">${escapeHtml(m.id)}</span>
                                 </div>
                             </div>
                         `;
@@ -1126,490 +768,6 @@
                 }
             });
             container.innerHTML = hasStaff ? html : `<div class="text-center text-gray-500 text-xs py-10 font-mono">No staff configured.</div>`;
-        }
-
-        // KEYBINDINGS
-        document.addEventListener('keydown', (e) => {
-            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'x') {
-                e.preventDefault();
-                if (!siteData.adminEnabled) return alert('Admin Panel disabled by Owner.');
-                const panel = document.getElementById('adminPanel');
-                panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
-                if (panel.style.display === 'flex') document.getElementById('adminKey').focus();
-            }
-            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'c') {
-                e.preventDefault();
-                const panel = document.getElementById('ownerPanel');
-                panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
-                if (panel.style.display === 'flex') {
-                    populateOwnerInputs();
-                    document.getElementById('ownerKey').focus();
-                }
-            }
-            if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'j') {
-                e.preventDefault();
-                openPassModal();
-            }
-        });
-
-        function openPassModal() {
-            document.getElementById('passChangeModal').classList.remove('hidden');
-            document.getElementById('modalNewAdminPass').value = siteData.adminKey;
-            document.getElementById('modalNewOwnerPass').value = siteData.ownerKey;
-            document.getElementById('modalSecurityCode').value = '';
-            document.getElementById('modalPassMsg').textContent = '';
-        }
-
-        function closePassModal() {
-            document.getElementById('passChangeModal').classList.add('hidden');
-        }
-
-        function applyModalPasswordChanges() {
-            const secCode = document.getElementById('modalSecurityCode').value.trim();
-            const msgBox = document.getElementById('modalPassMsg');
-
-            if (secCode !== '12679') {
-                msgBox.style.color = '#ffffff';
-                msgBox.textContent = 'Invalid Security Code! Authorization required.';
-                return;
-            }
-
-            const newAdmin = document.getElementById('modalNewAdminPass').value.trim();
-            const newOwner = document.getElementById('modalNewOwnerPass').value.trim();
-
-            if (newAdmin) siteData.adminKey = newAdmin;
-            if (newOwner) siteData.ownerKey = newOwner;
-
-            saveData();
-            msgBox.style.color = '#ffffff';
-            msgBox.textContent = 'Passwords updated successfully!';
-            setTimeout(closePassModal, 1200);
-        }
-
-        function toggleAdminPanel() { document.getElementById('adminPanel').style.display = 'none'; }
-        function toggleOwnerPanel() { document.getElementById('ownerPanel').style.display = 'none'; }
-
-        // ADMIN CONTROLS
-        function verifyAdminKey() {
-            if (document.getElementById('adminKey').value === siteData.adminKey) {
-                document.getElementById('adminLoginView').style.display = 'none';
-                document.getElementById('adminDashboardView').style.display = 'flex';
-                document.getElementById('adminCleanerUrlInput').value = siteData.cleaner.downloadUrl;
-            } else {
-                document.getElementById('adminMsg').style.color = '#ffffff';
-                document.getElementById('adminMsg').textContent = 'Incorrect password';
-            }
-        }
-
-        function switchAdminSubTab(tabId, btn) {
-            document.querySelectorAll('.admin-tab-pane').forEach(p => p.classList.add('hidden'));
-            document.querySelectorAll('.admin-subtab-btn').forEach(b => {
-                b.classList.remove('bg-white', 'text-black');
-                b.classList.add('text-gray-400');
-            });
-            document.getElementById(tabId).classList.remove('hidden');
-            btn.classList.add('bg-white', 'text-black');
-            btn.classList.remove('text-gray-400');
-        }
-
-        function adminApplyStatus() {
-            const name = document.getElementById('adminServiceSelect').value;
-            const status = document.getElementById('adminStatusSelect').value;
-            const service = siteData.services.find(s => s.name === name);
-            if (service) {
-                service.status = status;
-                saveData();
-                alert(`Status for ${name} updated to ${status}!`);
-            }
-        }
-
-        function adminApplyCleanerSettings() {
-            siteData.cleaner.downloadUrl = document.getElementById('adminCleanerUrlInput').value.trim() || siteData.cleaner.downloadUrl;
-            saveData();
-            alert('Cleaner download link updated!');
-        }
-
-        // OWNER CONTROLS
-        function verifyOwnerKey() {
-            if (document.getElementById('ownerKey').value === siteData.ownerKey) {
-                document.getElementById('ownerLoginView').style.display = 'none';
-                document.getElementById('ownerDashboardView').style.display = 'flex';
-            } else {
-                document.getElementById('ownerMsg').style.color = '#ffffff';
-                document.getElementById('ownerMsg').textContent = 'Incorrect password';
-            }
-        }
-
-        function switchOwnerSubTab(tabId, btn) {
-            document.querySelectorAll('.owner-tab-pane').forEach(p => p.classList.add('hidden'));
-            document.querySelectorAll('.owner-subtab-btn').forEach(b => {
-                b.classList.remove('bg-white', 'text-black');
-                b.classList.add('text-gray-400');
-            });
-            document.getElementById(tabId).classList.remove('hidden');
-            btn.classList.add('bg-white', 'text-black');
-            btn.classList.remove('text-gray-400');
-        }
-
-        function populateOwnerInputs() {
-            document.getElementById('ownerTitleInput').value = siteData.siteTitle;
-            document.getElementById('ownerSubtitleInput').value = siteData.siteSubtitle;
-            document.getElementById('ownerDiscordUrlInput').value = siteData.discordUrl;
-            document.getElementById('ownerCleanerTitleInput').value = siteData.cleaner.title;
-            document.getElementById('ownerCleanerDescInput').value = siteData.cleaner.desc;
-            document.getElementById('ownerCleanerUrlInput').value = siteData.cleaner.downloadUrl;
-
-            document.getElementById('ownerAppIconInput').value = siteData.appIconUrl;
-            document.getElementById('ownerCleanerIconInput').value = siteData.cleanerIconUrl;
-
-            // Populate Text Inputs
-            const lbs = siteData.labels || defaultData.labels;
-            document.getElementById('ownerTextTabStatus').value = lbs.tabStatus || 'Status';
-            document.getElementById('ownerTextTabTeam').value = lbs.tabTeam || 'Staff';
-            document.getElementById('ownerTextTabTools').value = lbs.tabTools || 'Download';
-            document.getElementById('ownerTextStatusHeader').value = lbs.statusHeader || 'STATUS';
-            document.getElementById('ownerTextDiscordBtn').value = lbs.discordBtnText || 'Join Discord Server';
-            document.getElementById('ownerTextCleanerBtn').value = lbs.cleanerBtnText || 'Download udCleaner Utility';
-            document.getElementById('ownerTextPopupBtn').value = lbs.popupBtnText || 'Open Link';
-
-            document.getElementById('ownerAdminEnabledToggle').checked = siteData.adminEnabled;
-            document.getElementById('ownerAdminPassphraseInput').value = siteData.adminKey;
-            document.getElementById('ownerOwnerPassphraseInput').value = siteData.ownerKey;
-
-            document.getElementById('ownerPopupEnabledToggle').checked = siteData.popupConfig.enabled;
-            document.getElementById('ownerPopupTitleInput').value = siteData.popupConfig.title;
-            document.getElementById('ownerPopupMsgInput').value = siteData.popupConfig.message;
-            document.getElementById('ownerPopupImageInput').value = siteData.popupConfig.imageUrl;
-            document.getElementById('ownerPopupUrlInput').value = siteData.popupConfig.linkUrl;
-            document.getElementById('ownerPopupTimeUnit').value = siteData.popupConfig.timeUnit;
-            document.getElementById('ownerPopupTimeValue').value = siteData.popupConfig.timeValue;
-
-            renderOwnerCategoriesList();
-            renderOwnerStaffSelect();
-            renderOwnerStaffList();
-            renderOwnerServicesList();
-        }
-
-        function ownerSaveBranding() {
-            siteData.siteTitle = document.getElementById('ownerTitleInput').value.trim() || siteData.siteTitle;
-            siteData.siteSubtitle = document.getElementById('ownerSubtitleInput').value.trim() || siteData.siteSubtitle;
-            siteData.discordUrl = document.getElementById('ownerDiscordUrlInput').value.trim() || siteData.discordUrl;
-            siteData.cleaner.title = document.getElementById('ownerCleanerTitleInput').value.trim() || siteData.cleaner.title;
-            siteData.cleaner.desc = document.getElementById('ownerCleanerDescInput').value.trim() || siteData.cleaner.desc;
-            saveData();
-            alert('Site branding and details updated!');
-        }
-
-        function ownerSaveIcons() {
-            siteData.appIconUrl = document.getElementById('ownerAppIconInput').value.trim() || siteData.appIconUrl;
-            siteData.cleanerIconUrl = document.getElementById('ownerCleanerIconInput').value.trim() || siteData.cleanerIconUrl;
-            saveData();
-            alert('Icon settings updated!');
-        }
-
-        function ownerSaveAllSiteText() {
-            siteData.labels = {
-                tabStatus: document.getElementById('ownerTextTabStatus').value.trim() || 'Status',
-                tabTeam: document.getElementById('ownerTextTabTeam').value.trim() || 'Staff',
-                tabTools: document.getElementById('ownerTextTabTools').value.trim() || 'Download',
-                statusHeader: document.getElementById('ownerTextStatusHeader').value.trim() || 'STATUS',
-                discordBtnText: document.getElementById('ownerTextDiscordBtn').value.trim() || 'Join Discord Server',
-                cleanerBtnText: document.getElementById('ownerTextCleanerBtn').value.trim() || 'Download udCleaner Utility',
-                popupBtnText: document.getElementById('ownerTextPopupBtn').value.trim() || 'Open Link'
-            };
-            saveData();
-            alert('All site text and button labels saved!');
-        }
-
-        function ownerCreateCategory() {
-            const name = document.getElementById('ownerNewCatName').value.trim();
-            const badge = document.getElementById('ownerNewCatBadge').value.trim();
-            const gradientClass = document.getElementById('ownerNewCatGradient').value;
-
-            if (!name) return alert('Category Name is required.');
-
-            const id = 'cat_' + Date.now();
-            siteData.categories.push({ id, label: name, badge, gradientClass });
-            siteData.staff[id] = [];
-
-            document.getElementById('ownerNewCatName').value = '';
-            document.getElementById('ownerNewCatBadge').value = '';
-
-            saveData();
-            populateOwnerInputs();
-            alert(`Category "${name}" created!`);
-        }
-
-        function renderOwnerCategoriesList() {
-            const list = document.getElementById('ownerCategoriesList');
-            if (!list) return;
-            list.innerHTML = '';
-            siteData.categories.forEach((cat, idx) => {
-                list.innerHTML += `
-                    <div class="flex flex-col gap-2 p-3.5 rounded-xl bg-white/[0.02] border border-white/10 text-xs">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-2">
-                                <span class="font-bold text-white text-sm">${escapeHtml(cat.label)}</span>
-                                <span class="text-[10px] font-mono text-gray-500">(${cat.id})</span>
-                            </div>
-                            <div class="flex items-center gap-1.5">
-                                <button onclick="ownerMoveCategory(${idx}, -1)" ${idx === 0 ? 'disabled class="opacity-30 p-1.5 bg-white/5 rounded text-white"' : 'class="p-1.5 bg-white/10 hover:bg-white/20 rounded text-white font-mono"'}>↑</button>
-                                <button onclick="ownerMoveCategory(${idx}, 1)" ${idx === siteData.categories.length - 1 ? 'disabled class="opacity-30 p-1.5 bg-white/5 rounded text-white"' : 'class="p-1.5 bg-white/10 hover:bg-white/20 rounded text-white font-mono"'}>↓</button>
-                                <button onclick="ownerDeleteCategory(${idx})" class="text-red-400 hover:text-red-300 font-bold ml-2">Delete</button>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-2 pt-2 border-t border-white/5">
-                            <div class="flex flex-col gap-1">
-                                <label class="text-[9px] font-mono text-gray-400">Badge Icon URL</label>
-                                <input type="text" id="catBadge_${cat.id}" value="${escapeHtml(cat.badge || '')}" onchange="ownerUpdateCatDetail('${cat.id}')" class="bg-black/80 border border-white/15 px-2.5 py-1.5 rounded-lg text-xs text-white outline-none">
-                            </div>
-                            <div class="flex flex-col gap-1">
-                                <label class="text-[9px] font-mono text-gray-400">Text Gradient Style</label>
-                                <select id="catGrad_${cat.id}" onchange="ownerUpdateCatDetail('${cat.id}')" class="bg-black/80 border border-white/15 px-2.5 py-1.5 rounded-lg text-xs text-white outline-none">
-                                    <option value="staff-gradient-yellow-orange" ${cat.gradientClass === 'staff-gradient-yellow-orange' ? 'selected' : ''}>Gold / Orange Flame</option>
-                                    <option value="staff-gradient-bw" ${cat.gradientClass === 'staff-gradient-bw' ? 'selected' : ''}>Monochrome Silver / Black</option>
-                                    <option value="staff-gradient-purple-black" ${cat.gradientClass === 'staff-gradient-purple-black' ? 'selected' : ''}>Deep Purple / Dark</option>
-                                    <option value="staff-gradient-cyan-blue" ${cat.gradientClass === 'staff-gradient-cyan-blue' ? 'selected' : ''}>Neon Cyan / Sapphire</option>
-                                    <option value="staff-gradient-emerald-green" ${cat.gradientClass === 'staff-gradient-emerald-green' ? 'selected' : ''}>Emerald Green / Mint</option>
-                                    <option value="staff-gradient-pink-rose" ${cat.gradientClass === 'staff-gradient-pink-rose' ? 'selected' : ''}>Magenta / Rose Pink</option>
-                                    <option value="staff-gradient-default" ${cat.gradientClass === 'staff-gradient-default' ? 'selected' : ''}>White / Slate Grey</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        function ownerUpdateCatDetail(catId) {
-            const cat = siteData.categories.find(c => c.id === catId);
-            if (!cat) return;
-            const badgeInput = document.getElementById(`catBadge_${catId}`);
-            const gradInput = document.getElementById(`catGrad_${catId}`);
-
-            if (badgeInput) cat.badge = badgeInput.value.trim();
-            if (gradInput) cat.gradientClass = gradInput.value;
-
-            saveData();
-        }
-
-        function ownerMoveCategory(index, direction) {
-            const targetIndex = index + direction;
-            if (targetIndex < 0 || targetIndex >= siteData.categories.length) return;
-            const temp = siteData.categories[index];
-            siteData.categories[index] = siteData.categories[targetIndex];
-            siteData.categories[targetIndex] = temp;
-            saveData();
-            renderOwnerCategoriesList();
-        }
-
-        function ownerDeleteCategory(index) {
-            const cat = siteData.categories[index];
-            delete siteData.staff[cat.id];
-            siteData.categories.splice(index, 1);
-            saveData();
-            populateOwnerInputs();
-        }
-
-        function ownerToggleAdminState() {
-            siteData.adminEnabled = document.getElementById('ownerAdminEnabledToggle').checked;
-            saveData();
-        }
-
-        function ownerSavePasses() {
-            siteData.adminKey = document.getElementById('ownerAdminPassphraseInput').value.trim() || siteData.adminKey;
-            siteData.ownerKey = document.getElementById('ownerOwnerPassphraseInput').value.trim() || siteData.ownerKey;
-            saveData();
-            alert('Panel Passwords updated!');
-        }
-
-        function ownerTogglePopupState() {
-            siteData.popupConfig.enabled = document.getElementById('ownerPopupEnabledToggle').checked;
-            saveData();
-        }
-
-        function ownerSavePopupConfig() {
-            siteData.popupConfig.title = document.getElementById('ownerPopupTitleInput').value.trim();
-            siteData.popupConfig.message = document.getElementById('ownerPopupMsgInput').value.trim();
-            siteData.popupConfig.imageUrl = document.getElementById('ownerPopupImageInput').value.trim();
-            siteData.popupConfig.linkUrl = document.getElementById('ownerPopupUrlInput').value.trim();
-            siteData.popupConfig.timeUnit = document.getElementById('ownerPopupTimeUnit').value;
-            siteData.popupConfig.timeValue = parseInt(document.getElementById('ownerPopupTimeValue').value) || 1;
-            saveData();
-            alert('POP-UP SETTINGS SAVED!');
-        }
-
-        function renderOwnerStaffSelect() {
-            const select = document.getElementById('ownerStaffRole');
-            if (!select) return;
-            select.innerHTML = '';
-            siteData.categories.forEach(cat => {
-                select.innerHTML += `<option value="${cat.id}">${escapeHtml(cat.label)}</option>`;
-            });
-        }
-
-        function renderOwnerStaffList() {
-            const list = document.getElementById('ownerStaffList');
-            if (!list) return;
-            list.innerHTML = '';
-            siteData.categories.forEach(cat => {
-                const members = siteData.staff[cat.id] || [];
-                members.forEach((m, idx) => {
-                    const itemKey = `${cat.id}-${idx}`;
-                    const isEditing = editingStaffKey === itemKey;
-
-                    if (isEditing) {
-                        let catOptions = '';
-                        siteData.categories.forEach(c => {
-                            catOptions += `<option value="${c.id}" ${cat.id === c.id ? 'selected' : ''}>${escapeHtml(c.label)}</option>`;
-                        });
-
-                        list.innerHTML += `
-                            <div class="flex flex-col gap-2.5 p-3.5 rounded-xl bg-white/[0.04] border border-white/20 text-xs">
-                                <span class="text-xs font-bold text-white uppercase tracking-wider">Edit Profile (${escapeHtml(cat.label)})</span>
-                                <div class="flex flex-col gap-1.5">
-                                    <label class="text-[10px] font-mono text-gray-400">Role Category</label>
-                                    <select id="editStaffRole" class="w-full bg-black/80 border border-white/15 px-3 py-2 rounded-xl text-xs text-white outline-none">
-                                        ${catOptions}
-                                    </select>
-                                </div>
-                                <div class="flex flex-col gap-1.5">
-                                    <label class="text-[10px] font-mono text-gray-400">Name</label>
-                                    <input type="text" id="editStaffName" value="${escapeHtml(m.name)}" class="w-full bg-black/80 border border-white/15 px-3 py-2 rounded-xl text-xs text-white outline-none">
-                                </div>
-                                <div class="flex flex-col gap-1.5">
-                                    <label class="text-[10px] font-mono text-gray-400">Discord ID / Title</label>
-                                    <input type="text" id="editStaffId" value="${escapeHtml(m.id)}" class="w-full bg-black/80 border border-white/15 px-3 py-2 rounded-xl text-xs text-white outline-none">
-                                </div>
-                                <div class="flex flex-col gap-1.5">
-                                    <label class="text-[10px] font-mono text-gray-400">Avatar Image URL</label>
-                                    <input type="text" id="editStaffAvatar" value="${escapeHtml(m.avatar)}" class="w-full bg-black/80 border border-white/15 px-3 py-2 rounded-xl text-xs text-white outline-none">
-                                </div>
-                                <div class="flex items-center gap-2 pt-1">
-                                    <button onclick="ownerSaveStaffEdit('${cat.id}', ${idx})" class="flex-1 py-2 rounded-xl bg-white text-black font-bold text-xs uppercase hover:bg-gray-200 transition-all">Save Changes</button>
-                                    <button onclick="ownerCancelStaffEdit()" class="px-3 py-2 rounded-xl bg-white/10 text-gray-300 font-semibold text-xs hover:bg-white/20 transition-all">Cancel</button>
-                                </div>
-                            </div>
-                        `;
-                    } else {
-                        list.innerHTML += `
-                            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/10 text-xs">
-                                <div class="flex items-center gap-2.5 overflow-hidden">
-                                    <img src="${escapeHtml(m.avatar)}" class="w-6 h-6 rounded-full object-cover border border-white/20 shrink-0">
-                                    <span class="text-white font-medium truncate">${escapeHtml(m.name)} <span class="text-gray-500">(${escapeHtml(cat.label)})</span></span>
-                                </div>
-                                <div class="flex items-center gap-3 shrink-0">
-                                    <button onclick="ownerStartStaffEdit('${cat.id}', ${idx})" class="text-white hover:text-gray-300 font-bold">Edit</button>
-                                    <button onclick="ownerDeleteStaff('${cat.id}', ${idx})" class="text-white hover:text-gray-300 font-bold">Delete</button>
-                                </div>
-                            </div>
-                        `;
-                    }
-                });
-            });
-        }
-
-        function ownerStartStaffEdit(role, idx) {
-            editingStaffKey = `${role}-${idx}`;
-            renderOwnerStaffList();
-        }
-
-        function ownerCancelStaffEdit() {
-            editingStaffKey = null;
-            renderOwnerStaffList();
-        }
-
-        function ownerSaveStaffEdit(currentRole, idx) {
-            const newRole = document.getElementById('editStaffRole').value;
-            const newName = document.getElementById('editStaffName').value.trim();
-            const newId = document.getElementById('editStaffId').value.trim();
-            const newAvatar = document.getElementById('editStaffAvatar').value.trim();
-
-            if (!newName) return alert('Name cannot be empty!');
-
-            const updatedMember = {
-                name: newName,
-                id: newId || 'Staff Member',
-                avatar: newAvatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60'
-            };
-
-            siteData.staff[currentRole].splice(idx, 1);
-            if (!siteData.staff[newRole]) siteData.staff[newRole] = [];
-            siteData.staff[newRole].push(updatedMember);
-
-            editingStaffKey = null;
-            saveData();
-            renderOwnerStaffList();
-        }
-
-        function ownerAddStaff() {
-            const role = document.getElementById('ownerStaffRole').value;
-            const name = document.getElementById('ownerStaffName').value.trim();
-            const id = document.getElementById('ownerStaffId').value.trim();
-            const avatar = document.getElementById('ownerStaffAvatar').value.trim();
-
-            if (!name) return alert('Name required');
-            if (!siteData.staff[role]) siteData.staff[role] = [];
-            
-            siteData.staff[role].push({
-                name,
-                id: id || 'Staff Member',
-                avatar: avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60'
-            });
-            saveData();
-            renderOwnerStaffList();
-            alert('Staff member added!');
-        }
-
-        function ownerDeleteStaff(role, idx) {
-            if (editingStaffKey === `${role}-${idx}`) editingStaffKey = null;
-            siteData.staff[role].splice(idx, 1);
-            saveData();
-            renderOwnerStaffList();
-        }
-
-        function renderOwnerServicesList() {
-            const list = document.getElementById('ownerServicesList');
-            if (!list) return;
-            list.innerHTML = '';
-            siteData.services.forEach((s, idx) => {
-                list.innerHTML += `
-                    <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.02] border border-white/10 text-xs">
-                        <span class="text-white font-medium">${escapeHtml(s.name)}</span>
-                        <button onclick="ownerDeleteService(${idx})" class="text-white hover:text-gray-300 font-bold">Delete</button>
-                    </div>
-                `;
-            });
-        }
-
-        function ownerSaveCleanerLink() {
-            siteData.cleaner.downloadUrl = document.getElementById('ownerCleanerUrlInput').value.trim() || siteData.cleaner.downloadUrl;
-            saveData();
-            alert('Cleaner download link updated!');
-        }
-
-        function ownerAddService() {
-            const name = document.getElementById('ownerNewServiceName').value.trim();
-            if (!name) return alert('Name required');
-            siteData.services.push({ name, status: 'green' });
-            saveData();
-            document.getElementById('ownerNewServiceName').value = '';
-            renderOwnerServicesList();
-            alert(`Service ${name} added!`);
-        }
-
-        function ownerDeleteService(idx) {
-            siteData.services.splice(idx, 1);
-            saveData();
-            renderOwnerServicesList();
-        }
-
-        function ownerWipeEntireSite() {
-            document.getElementById('deleteSecurityInput').value = '';
-            document.getElementById('deleteModalMsg').textContent = '';
-            document.getElementById('deleteConfirmModal').classList.remove('hidden');
-            document.getElementById('deleteSecurityInput').focus();
         }
 
         function closeDeleteModal() {
@@ -1625,22 +783,16 @@
                 siteData.categories = [];
                 siteData.staff = {};
                 siteData.popupConfig = { enabled: false, title: '', message: '', imageUrl: '', linkUrl: '', timeUnit: 'minutes', timeValue: 1 };
-                siteData.cleaner = { title: 'udCleaner', desc: 'Telemetry Purger', downloadUrl: '#' };
-                saveData();
-                populateOwnerInputs();
+                siteData.cleaner = { title: 'udCleaner (3).zip', desc: 'Very ud Frequent updates (with near DAILY updates)', downloadUrl: '#' };
                 closeDeleteModal();
                 alert("Site completely wiped.");
             } else {
                 msgBox.style.color = '#ffffff';
-                msgBox.textContent = 'Invalid key. Wipe canceled.';
+                msgBox.textContent = 'Incorrect Master Code';
             }
         }
 
-        function escapeHtml(str) {
-            return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-        }
-
-        document.addEventListener("DOMContentLoaded", loadData);
+        window.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
 </html>
