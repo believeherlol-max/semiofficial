@@ -230,185 +230,18 @@
         </div>
     </div>
 
-    <div class="w-full max-w-lg mx-auto flex flex-col items-center gap-5 relative z-10 text-center my-auto">
-
-        <!-- Title & Subtitle -->
-        <div class="flex flex-col items-center justify-center pt-2 pb-1 px-8 no-select">
-            <h1 class="text-5xl font-normal tracking-wide text-white flex items-center justify-center drop-shadow-[0_20px_50px_rgba(255,255,255,0.2)] py-2 px-8 overflow-visible leading-tight no-select">
-                <span class="font-cursive bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent inline-block pr-3 no-select">Semi Official</span>
-            </h1>
-            <p class="text-[11px] text-gray-400 mt-1 tracking-[0.2em] uppercase font-mono no-select">Based in France</p>
+    <div class="w-full max-w-lg mx-auto flex flex-col items-center justify-center gap-4 relative z-10 text-center my-auto px-6">
+        <div class="glass-panel w-full p-8 sm:p-10 rounded-3xl flex flex-col items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white shadow-xl mb-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2m6-2a10 10 0 11-20 0 10 10 0 0120 0z"/></svg>
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">Updating</h1>
+            <p class="text-sm text-gray-400 leading-relaxed">We will be back online soon.</p>
         </div>
-
-        <!-- Navigation Tab Menu -->
-        <nav class="glass-panel p-1.5 rounded-full flex gap-1.5 shadow-xl justify-center items-center w-full max-w-xs overflow-x-auto custom-scrollbar">
-            <button onclick="switchTab('statusTab', this)" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold text-black bg-white shadow-md">Status</button>
-            <button onclick="switchTab('teamTab', this)" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold text-gray-400 hover:text-white">Staff</button>
-            <button onclick="switchTab('toolsTab', this)" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold text-gray-400 hover:text-white">Download</button>
-        </nav>
-
-        <!-- MAIN CONTAINER -->
-        <main class="w-full tab-content-wrapper">
-
-            <!-- TAB 1: STATUS & TELEMETRY -->
-            <div id="statusTab" class="tab-pane active w-full">
-                <div class="glass-panel w-full p-6 rounded-3xl flex flex-col gap-4 text-left">
-                    <div class="flex items-center justify-center pb-2.5 border-b border-white/[0.06]">
-                        <span class="text-[11px] font-mono uppercase tracking-widest text-gray-400 font-bold">Status</span>
-                    </div>
-
-                    <!-- Services Dynamic Container -->
-                    <div id="servicesContainer" class="flex flex-col gap-2.5">
-                        <div class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row" data-name="Spoofer">
-                            <div class="flex items-center gap-3.5">
-                                <div class="w-8 h-8 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white shadow-inner">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                                </div>
-                                <span class="text-xs font-semibold text-white tracking-wide">Spoofer</span>
-                            </div>
-                            <div class="status-indicator flex items-center gap-2" data-status-key="green">
-                                <div class="tiny-dot tiny-dot-green"></div>
-                            </div>
-                        </div>
-
-                        <div class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row" data-name="Cleaner">
-                            <div class="flex items-center gap-3.5">
-                                <div class="w-8 h-8 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white shadow-inner">
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                                </div>
-                                <span class="text-xs font-semibold text-white tracking-wide">Cleaner</span>
-                            </div>
-                            <div class="status-indicator flex items-center gap-2" data-status-key="green">
-                                <div class="tiny-dot tiny-dot-green"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="h-[1px] bg-white/[0.06] my-1"></div>
-
-                    <a href="https://discord.gg/semi" target="_blank" class="download-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-100 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.011c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                        Join Discord Server
-                    </a>
-                </div>
-            </div>
-
-            <!-- TAB 2: STAFF DIRECTORY -->
-            <div id="teamTab" class="tab-pane w-full">
-                <div id="staffDirectoryContainer" class="glass-panel w-full p-6 rounded-3xl flex flex-col gap-4 text-left max-h-[380px] overflow-y-auto custom-scrollbar">
-                    <!-- Dynamic staff rendered here -->
-                </div>
-            </div>
-
-            <!-- TAB 3: DOWNLOAD -->
-            <div id="toolsTab" class="tab-pane w-full">
-                <div class="glass-panel w-full p-6 rounded-3xl flex flex-col items-center gap-4 text-center">
-                    <div class="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white shadow-xl">
-                        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <h2 class="text-xl font-bold tracking-tight text-white">Cleaner</h2>
-                        <p class="text-[11px] text-gray-400 max-w-xs">Advanced system telemetry trace purger and optimization module</p>
-                    </div>
-
-                    <a href="https://download1077.mediafire.com/i8rrogstkyngOG7S108ltHluby-VjHqMZh51iVmQYkInT4u9KS5xEV6KkLXF7R1WP4i_dcS8t2xlfbmMnM4jcj-UNXI5djE_Pqt_ohdRA1DF5QHMlHiIUL94yI2mPx3eaHMkTYfGabsfOI87XKyFrx5cJA3MKvfZkcm_r1HapU3D/h6bzncd7cvx635t/udCleaner.zip" target="_blank" class="download-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-100 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        Download Cleaner Utility
-                    </a>
-                </div>
-            </div>
-
-        </main>
-
-        <!-- Expanded Admin Panel Overlay (Ctrl+X) taking up half/full screen layout, fully scrolled/visible content -->
-        <div id="adminPanel" class="glass-panel fixed right-0 top-0 h-full w-full md:w-[50vw] p-8 hidden flex-col z-50 shadow-2xl border-l border-white/20 text-left overflow-hidden">
-            
-            <!-- Login View -->
-            <div id="loginView" class="flex flex-col gap-4 max-w-sm mx-auto my-auto w-full">
-                <div class="text-sm font-mono uppercase tracking-widest text-white font-bold flex items-center justify-between">
-                    <span>Admin Login</span>
-                    <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-sm cursor-pointer">✕</button>
-                </div>
-                <input type="password" id="adminKey" placeholder="Passphrase..." class="w-full bg-black/60 border border-white/15 px-4 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none focus:border-white/30 shadow-inner">
-                <button onclick="verifyKey()" class="w-full py-3 rounded-xl bg-white text-black hover:bg-gray-100 font-bold text-xs uppercase transition-all cursor-pointer shadow-md">Enter</button>
-                <div id="adminMsg" class="text-xs text-center font-medium min-h-[16px]"></div>
-            </div>
-
-            <!-- Dashboard View with Independent Internal Custom Scrollbar -->
-            <div id="dashboardView" class="flex flex-col h-full hidden w-full">
-                <div class="flex items-center justify-between pb-4 border-b border-white/[0.08] shrink-0">
-                    <span class="text-xs font-mono uppercase tracking-widest text-white font-bold">Admin Control Center</span>
-                    <button onclick="toggleAdminPanel()" class="text-gray-400 hover:text-white text-sm cursor-pointer p-2">✕ Close</button>
-                </div>
-
-                <div class="flex flex-col gap-6 py-6 overflow-y-auto custom-scrollbar flex-1 pr-2">
-                    <!-- Service Status Control -->
-                    <div class="flex flex-col gap-3">
-                        <span class="text-xs font-mono text-gray-400 font-bold uppercase">Toggle Service Status</span>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <select id="serviceSelect" class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none shadow-inner">
-                                <option value="Spoofer">Spoofer</option>
-                                <option value="Cleaner">Cleaner</option>
-                            </select>
-                            <select id="statusSelect" class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none shadow-inner">
-                                <option value="green">Operational</option>
-                                <option value="orange">Updating</option>
-                                <option value="red">Offline</option>
-                            </select>
-                        </div>
-                        <button onclick="changeStatus()" class="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-semibold text-white transition-all cursor-pointer shadow-sm">Update Status</button>
-                    </div>
-
-                    <div class="h-[1px] bg-white/[0.08]"></div>
-
-                    <!-- Pop-up Configurator with Timing Controls -->
-                    <div class="flex flex-col gap-3">
-                        <span class="text-xs font-mono text-gray-400 font-bold uppercase">Timed Pop-up Configuration</span>
-                        <input type="text" id="popupTitleInput" placeholder="Pop-up Title..." value="Special Announcement" class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none shadow-inner">
-                        <textarea id="popupMsgInput" placeholder="Pop-up Message Text..." class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none shadow-inner h-24 resize-none">Check out our latest updates and join our community channel!</textarea>
-                        <input type="text" id="popupImageInput" placeholder="Image URL (Optional)..." value="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=60" class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none shadow-inner">
-                        <input type="text" id="popupUrlInput" placeholder="Destination Link URL..." value="https://discord.gg/semi" class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none shadow-inner">
-                        
-                        <div class="grid grid-cols-2 gap-3">
-                            <div class="flex flex-col gap-1.5">
-                                <span class="text-[10px] font-mono text-gray-400">Interval Unit</span>
-                                <select id="popupTimeUnit" class="w-full bg-black/60 border border-white/15 px-3 py-3 rounded-xl text-xs text-white outline-none shadow-inner">
-                                    <option value="seconds">Seconds</option>
-                                    <option value="minutes" selected>Minutes</option>
-                                    <option value="hours">Hours</option>
-                                </select>
-                            </div>
-                            <div class="flex flex-col gap-1.5">
-                                <span class="text-[10px] font-mono text-gray-400">Time Value</span>
-                                <input type="number" id="popupTimeValue" value="1" min="1" class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none shadow-inner">
-                            </div>
-                        </div>
-                        <button onclick="savePopupSettings()" class="w-full py-3 rounded-xl bg-white text-black hover:bg-gray-100 font-bold text-xs uppercase transition-all cursor-pointer shadow-sm mt-1">Apply & Start Timer</button>
-                    </div>
-
-                    <div class="h-[1px] bg-white/[0.08]"></div>
-
-                    <!-- Add Staff Member -->
-                    <div class="flex flex-col gap-3 pb-6">
-                        <span class="text-xs font-mono text-gray-400 font-bold uppercase">Add Staff Member</span>
-                        <select id="newStaffRole" class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white outline-none shadow-inner">
-                            <option value="owners">Owner</option>
-                            <option value="developers">Developer</option>
-                            <option value="moderators">Moderator</option>
-                        </select>
-                        <input type="text" id="newStaffName" placeholder="Name / Handle..." class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none shadow-inner">
-                        <input type="text" id="newStaffId" placeholder="Discord ID / Subtitle..." class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none shadow-inner">
-                        <input type="text" id="newStaffAvatar" placeholder="Avatar Image URL..." class="w-full bg-black/60 border border-white/15 px-3.5 py-3 rounded-xl text-xs text-white placeholder-gray-500 outline-none shadow-inner">
-                        <button onclick="addNewStaff()" class="w-full py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/15 text-xs font-semibold text-white transition-all cursor-pointer shadow-sm">Add Member</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <script>
-        let siteData = JSON.parse(localStorage.getItem('semiSiteData')) || {
+        let siteData = {
             staff: {
                 owners: [
                     { name: 'y', id: '314643233625997313', avatar: 'https://media.discordapp.net/attachments/1482684122869665874/1535791322600833064/image.png?ex=6a790ca0&is=6a77bb20&hm=63b3ac82558c5fad5fe99c38f624bc2948a15826beb146c305921573b4f2a37b&=&format=webp&quality=lossless' }
@@ -419,10 +252,6 @@
                 moderators: [
                     { name: 'merzi', id: '1515530887532380170', avatar: 'https://cdn.discordapp.com/avatars/1515530887532380170/a0e91ae073dfece3d2b85b3e5685cc10.webp?size=1024' }
                 ]
-            },
-            statuses: {
-                "Spoofer": "green",
-                "Cleaner": "green"
             },
             popupConfig: {
                 title: 'Special Announcement',
@@ -435,30 +264,6 @@
         };
 
         let popupTimer = null;
-
-        function saveToStorage() {
-            localStorage.setItem('semiSiteData', JSON.stringify(siteData));
-        }
-
-        function applyStoredStatuses() {
-            if (!siteData.statuses) return;
-            document.querySelectorAll('#servicesContainer > div').forEach(row => {
-                const name = row.getAttribute('data-name');
-                const status = siteData.statuses[name];
-                if (status) {
-                    const indicator = row.querySelector('.status-indicator');
-                    const dot = indicator.querySelector('div');
-                    indicator.setAttribute('data-status-key', status);
-                    if (status === 'green') {
-                        dot.className = 'tiny-dot tiny-dot-green';
-                    } else if (status === 'orange') {
-                        dot.className = 'tiny-dot tiny-dot-orange';
-                    } else {
-                        dot.className = 'tiny-dot tiny-dot-red';
-                    }
-                }
-            });
-        }
 
         function showPopup() {
             const overlay = document.getElementById('popupOverlay');
@@ -494,8 +299,6 @@
             siteData.popupConfig.timeUnit = document.getElementById('popupTimeUnit').value;
             siteData.popupConfig.timeValue = parseInt(document.getElementById('popupTimeValue').value) || 1;
 
-            saveToStorage();
-
             if (popupTimer) clearInterval(popupTimer);
             let intervalMs = 60000;
             const val = parseInt(siteData.popupConfig.timeValue) || 1;
@@ -513,7 +316,7 @@
                 showPopup();
             }, intervalMs);
 
-            alert('Pop-up configuration updated and saved!');
+            alert('Pop-up configuration updated and timer started successfully!');
             showPopup();
         }
 
@@ -575,7 +378,6 @@
                 avatar: avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=60'
             });
 
-            saveToStorage();
             renderStaffDirectory();
             document.getElementById('newStaffName').value = '';
             document.getElementById('newStaffId').value = '';
@@ -603,6 +405,7 @@
             }, 150);
         }, { passive: true });
 
+        // Falling particles setup
         const particles = Array.from({ length: 70 }, () => ({
             x: Math.random() * width,
             y: Math.random() * height,
@@ -646,16 +449,6 @@
 
         document.addEventListener("DOMContentLoaded", () => {
             renderStaffDirectory();
-            applyStoredStatuses();
-            
-            if (siteData.popupConfig) {
-                document.getElementById('popupTitleInput').value = siteData.popupConfig.title;
-                document.getElementById('popupMsgInput').value = siteData.popupConfig.message;
-                document.getElementById('popupImageInput').value = siteData.popupConfig.imageUrl;
-                document.getElementById('popupUrlInput').value = siteData.popupConfig.linkUrl;
-                document.getElementById('popupTimeUnit').value = siteData.popupConfig.timeUnit;
-                document.getElementById('popupTimeValue').value = siteData.popupConfig.timeValue;
-            }
         });
 
         function escapeHtml(str) {
@@ -713,11 +506,21 @@
             const name = document.getElementById('serviceSelect').value;
             const status = document.getElementById('statusSelect').value;
 
-            if (!siteData.statuses) siteData.statuses = {};
-            siteData.statuses[name] = status;
-            saveToStorage();
-            applyStoredStatuses();
-            alert('Status updated and saved successfully!');
+            document.querySelectorAll('#servicesContainer > div').forEach(row => {
+                if (row.getAttribute('data-name') === name) {
+                    const indicator = row.querySelector('.status-indicator');
+                    const dot = indicator.querySelector('div');
+
+                    indicator.setAttribute('data-status-key', status);
+                    if (status === 'green') {
+                        dot.className = 'tiny-dot tiny-dot-green';
+                    } else if (status === 'orange') {
+                        dot.className = 'tiny-dot tiny-dot-orange';
+                    } else {
+                        dot.className = 'tiny-dot tiny-dot-red';
+                    }
+                }
+            });
         }
     </script>
 </body>
