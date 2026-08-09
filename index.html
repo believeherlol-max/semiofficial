@@ -6,7 +6,7 @@
     <title>‎ </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,7 +16,6 @@
                     fontFamily: {
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
-                        cursive: ['Great Vibes', 'cursive'],
                     }
                 }
             }
@@ -91,34 +90,6 @@
             transform: translateY(-2px);
         }
 
-        .tab-content-wrapper {
-            position: relative;
-            width: 100%;
-            display: grid;
-            grid-template-areas: "content";
-        }
-
-        .tab-pane {
-            grid-area: content;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px) scale(0.98);
-            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-                        visibility 0.4s;
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .tab-pane.active {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-        }
-
         .tiny-dot {
             width: 8px;
             height: 8px;
@@ -126,19 +97,9 @@
             position: relative;
         }
 
-        .tiny-dot-green {
-            background-color: #22c55e;
-            box-shadow: 0 0 12px rgba(34, 197, 94, 0.9);
-            animation: pulseGlow 2.8s ease-in-out infinite;
-        }
         .tiny-dot-orange {
             background-color: #f97316;
             box-shadow: 0 0 12px rgba(249, 115, 22, 0.8);
-            animation: pulseGlow 2.8s ease-in-out infinite;
-        }
-        .tiny-dot-red {
-            background-color: #ef4444;
-            box-shadow: 0 0 12px rgba(239, 68, 68, 0.8);
             animation: pulseGlow 2.8s ease-in-out infinite;
         }
 
@@ -147,142 +108,12 @@
             50% { opacity: 1; transform: scale(1.25); }
         }
 
-        .tab-btn {
+        .action-btn {
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            user-select: none;
-            flex: 1;
-            text-align: center;
-            white-space: nowrap;
-        }
-        .tab-btn:hover:not(.bg-white) {
-            transform: translateY(-1px);
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-        }
-
-        .interactive-row, .action-btn {
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .interactive-row:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px) scale(1.005);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
         }
         .action-btn:hover {
             transform: translateY(-2px) scale(1.01);
             box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
-        }
-
-        .cleaner-icon-box {
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .cleaner-icon-box:hover {
-            transform: translateY(-3px) scale(1.08);
-            filter: drop-shadow(0 8px 16px rgba(255, 255, 255, 0.4));
-        }
-
-        .custom-scrollbar {
-            scrollbar-width: thin;
-            scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-        }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-        }
-
-        #staffDirectoryContainer {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        #staffDirectoryContainer::-webkit-scrollbar { display: none; }
-
-        .popup-backdrop {
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            animation: fadeInOverlay 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes fadeInOverlay {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .popup-card {
-            animation: scaleInPopup 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        @keyframes scaleInPopup {
-            0% { opacity: 0; transform: scale(0.94) translateY(12px); }
-            100% { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .staff-gradient-yellow-orange {
-            background: linear-gradient(135deg, #facc15, #f97316, #fbbf24, #ea580c);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s ease infinite;
-            filter: drop-shadow(0 0 6px rgba(249, 115, 22, 0.4));
-        }
-
-        .staff-gradient-bw {
-            background: linear-gradient(135deg, #ffffff, #666666, #ffffff, #000000);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s ease infinite;
-            filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.2));
-        }
-
-        .staff-gradient-purple-black {
-            background: linear-gradient(135deg, #a855f7, #3b0764, #c084fc, #000000);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s ease infinite;
-            filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.3));
-        }
-
-        .staff-gradient-cyan-blue {
-            background: linear-gradient(135deg, #06b6d4, #3b82f6, #67e8f9, #1d4ed8);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s ease infinite;
-            filter: drop-shadow(0 0 6px rgba(6, 182, 212, 0.4));
-        }
-
-        .staff-gradient-emerald-green {
-            background: linear-gradient(135deg, #10b981, #059669, #34d399, #047857);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s ease infinite;
-            filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.4));
-        }
-
-        .staff-gradient-pink-rose {
-            background: linear-gradient(135deg, #ec4899, #f43f5e, #f472b6, #be123c);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s ease infinite;
-            filter: drop-shadow(0 0 6px rgba(236, 72, 153, 0.4));
-        }
-
-        .staff-gradient-default {
-            background: linear-gradient(135deg, #ffffff, #888888, #ffffff);
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 3s ease infinite;
         }
     </style>
 </head>
@@ -290,203 +121,31 @@
 
     <canvas id="particleCanvas"></canvas>
 
-    <!-- POP-UP OVERLAY -->
-    <div id="popupOverlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 popup-backdrop hidden">
-        <div class="glass-card popup-card w-full max-w-sm p-6 rounded-3xl flex flex-col items-center text-center gap-4 relative shadow-2xl border border-white/10">
-            <button onclick="closePopup()" class="absolute right-4 top-4 w-7 h-7 rounded-xl bg-white/[0.05] hover:bg-white/[0.12] border border-white/10 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">✕</button>
-            <div id="popupImageContainer" class="w-full h-36 rounded-2xl overflow-hidden border border-white/10 hidden bg-black/40">
-                <img id="popupImage" src="" alt="Popup Banner" class="w-full h-full object-cover">
-            </div>
-            <div class="flex flex-col gap-1 w-full">
-                <h3 id="popupTitle" class="text-base font-bold text-white tracking-wide"></h3>
-                <p id="popupMessage" class="text-xs text-gray-300 leading-relaxed"></p>
-            </div>
-            <div id="popupActionContainer" class="w-full pt-1">
-                <a id="popupLink" href="#" target="_blank" class="action-btn w-full py-3 rounded-2xl bg-white text-black hover:bg-gray-200 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2 shadow-xl">
-                    <span id="displayPopupBtnText">Open Link</span>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <!-- MAIN CARD -->
-    <div class="w-full max-w-md mx-auto flex flex-col items-center gap-5 relative z-10 text-center my-auto pointer-events-auto">
-        <div class="flex flex-col items-center justify-center pt-2 pb-1 px-8 group cursor-default">
-            <h1 class="text-5xl font-normal tracking-wide text-white flex items-center justify-center py-2 px-8 overflow-visible leading-tight transition-transform duration-500 group-hover:scale-105">
-                <span id="displaySiteTitle" class="font-cursive bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent inline-block pr-3 filter drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]">Semi Official</span>
-            </h1>
-            <p id="displaySiteSubtitle" class="text-[10px] text-gray-400 mt-1 tracking-[0.3em] uppercase font-mono transition-colors duration-300 group-hover:text-white">Based in France</p>
-        </div>
-
-        <!-- Navigation Tabs -->
-        <nav class="glass-card p-1.5 rounded-full flex gap-1.5 shadow-2xl justify-center items-center w-full max-w-xs overflow-x-auto custom-scrollbar border border-white/10">
-            <button id="navTabStatus" onclick="switchTab('statusTab', this)" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold text-black bg-white shadow-md">Status</button>
-            <button id="navTabTeam" onclick="switchTab('teamTab', this)" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold text-gray-400 hover:text-white">Staff</button>
-            <button id="navTabTools" onclick="switchTab('toolsTab', this)" class="tab-btn px-4 py-2 rounded-full text-xs font-semibold text-gray-400 hover:text-white">Download</button>
-        </nav>
-
-        <main class="w-full tab-content-wrapper">
-            <!-- STATUS TAB -->
-            <div id="statusTab" class="tab-pane active w-full">
-                <div class="glass-card w-full p-6 rounded-3xl flex flex-col gap-4 text-left">
-                    <div class="flex items-center justify-between pb-3 border-b border-white/[0.08]">
-                        <span id="displayStatusHeader" class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-bold">STATUS</span>
-                    </div>
-                    <div id="servicesContainer" class="flex flex-col gap-2.5">
-                        <div class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row cursor-pointer">
-                            <div class="flex items-center gap-3.5">
-                                <div class="w-8 h-8 flex items-center justify-center overflow-hidden p-0.5">
-                                    <img src="https://media.discordapp.net/attachments/1535468431912992879/1535910317647994910/icons8-application-48.png?ex=6a797b73&is=6a7829f3&hm=fdfa16fd7f30a82036e9d0c77c8f8a2298c98a931a1422b8cf023dceb7ac1437&=&format=webp&quality=lossless" class="w-4 h-4 object-contain" alt="Icon">
-                                </div>
-                                <span class="text-xs font-semibold text-white tracking-wide">Perm Spoofer</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="tiny-dot tiny-dot-green"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center justify-between p-3.5 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row cursor-pointer">
-                            <div class="flex items-center gap-3.5">
-                                <div class="w-8 h-8 flex items-center justify-center overflow-hidden p-0.5">
-                                    <img src="https://media.discordapp.net/attachments/1535468431912992879/1535910317647994910/icons8-application-48.png?ex=6a797b73&is=6a7829f3&hm=fdfa16fd7f30a82036e9d0c77c8f8a2298c98a931a1422b8cf023dceb7ac1437&=&format=webp&quality=lossless" class="w-4 h-4 object-contain" alt="Icon">
-                                </div>
-                                <span class="text-xs font-semibold text-white tracking-wide">Cleaner</span>
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <div class="tiny-dot tiny-dot-green"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-[1px] bg-white/[0.08] my-1"></div>
-                    <a id="discordBtnLink" href="https://discord.gg/semi" target="_blank" class="action-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-200 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
-                        <svg class="w-4 h-4 transition-transform duration-300 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.011c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-                        <span id="displayDiscordBtnText">Join Discord Server</span>
-                    </a>
+    <div class="w-full max-w-md mx-auto flex flex-col items-center gap-6 relative z-10 text-center my-auto pointer-events-auto">
+        <main class="w-full">
+            <div class="glass-card w-full p-8 rounded-3xl flex flex-col items-center gap-5 text-center">
+                <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 shadow-inner">
+                    <div class="tiny-dot tiny-dot-orange"></div>
                 </div>
-            </div>
 
-            <!-- STAFF TAB -->
-            <div id="teamTab" class="tab-pane w-full">
-                <div id="staffDirectoryContainer" class="glass-card w-full p-6 rounded-3xl flex flex-col gap-4 text-left max-h-[380px] overflow-y-auto custom-scrollbar">
-                    <div class="flex flex-col gap-2.5">
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-bold">owners</div>
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row cursor-pointer">
-                                <img src="https://media.discordapp.net/attachments/1482684122869665874/1535791322600833064/image.png?ex=6a790ca0&is=6a77bb20&hm=63b3ac82558c5fad5fe99c38f624bc2948a15826beb146c305921573b4f2a37b&=&format=webp&quality=lossless" class="w-9 h-9 rounded-full object-cover border border-white/20 transition-transform duration-300 hover:scale-110" alt="avatar">
-                                <div class="flex flex-col">
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="text-xs font-bold tracking-wide staff-gradient-yellow-orange leading-snug">y</span>
-                                        <img src="https://media.discordapp.net/attachments/1535468431912992879/1535909092273688586/owner_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=7c596cf524db94067e1ed905b91d0d54763badd3be25ed51e1a3d6fe02b66ff6&=&format=webp&quality=lossless" class="w-4 h-4 object-contain filter drop-shadow hover:scale-125 transition-transform duration-300" title="owners" alt="owners badge">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row cursor-pointer">
-                                <img src="https://cdn.discordapp.com/avatars/1418652726652436561/9a85417b0e2a24227c2921dccf778f32.webp?size=1024" class="w-9 h-9 rounded-full object-cover border border-white/20 transition-transform duration-300 hover:scale-110" alt="avatar">
-                                <div class="flex flex-col">
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="text-xs font-bold tracking-wide staff-gradient-yellow-orange leading-snug">Mylee</span>
-                                        <img src="https://media.discordapp.net/attachments/1535468431912992879/1535909092273688586/owner_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=7c596cf524db94067e1ed905b91d0d54763badd3be25ed51e1a3d6fe02b66ff6&=&format=webp&quality=lossless" class="w-4 h-4 object-contain filter drop-shadow hover:scale-125 transition-transform duration-300" title="owners" alt="owners badge">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2.5">
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-bold">Developers</div>
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row cursor-pointer">
-                                <img src="https://cdn.discordapp.com/avatars/1163529621686460518/0204e33a7ddc25b658128238f9a2c71f.webp?size=1024" class="w-9 h-9 rounded-full object-cover border border-white/20 transition-transform duration-300 hover:scale-110" alt="avatar">
-                                <div class="flex flex-col">
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="text-xs font-bold tracking-wide staff-gradient-bw leading-snug">$ Lux</span>
-                                        <img src="https://media.discordapp.net/attachments/1535468431912992879/1535909092852375603/developer.png?ex=6a797a4f&is=6a7828cf&hm=728ac7bcca9d4011be9af3390ae17e2cb43da679948bf13e17fb41e60dcb4990&=&format=webp&quality=lossless" class="w-4 h-4 object-contain filter drop-shadow hover:scale-125 transition-transform duration-300" title="Developers" alt="Developers badge">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2.5">
-                        <div class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-bold">Moderators</div>
-                        <div class="flex flex-col gap-2">
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row cursor-pointer">
-                                <img src="https://cdn.discordapp.com/avatars/1494699861847572642/786893211d21bf27722df98a8cb0385d.webp?size=1024" class="w-9 h-9 rounded-full object-cover border border-white/20 transition-transform duration-300 hover:scale-110" alt="avatar">
-                                <div class="flex flex-col">
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="text-xs font-bold tracking-wide staff-gradient-purple-black leading-snug">boss man</span>
-                                        <img src="https://media.discordapp.net/attachments/1535468431912992879/1535909092558639154/purple_staff_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=37aa34133f600456d9850939d67d38c08f8281103d7860694c63cbc7e1035cbd&=&format=webp&quality=lossless" class="w-4 h-4 object-contain filter drop-shadow hover:scale-125 transition-transform duration-300" title="Moderators" alt="Moderators badge">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-3.5 p-3 rounded-2xl bg-white/[0.01] border border-white/[0.05] interactive-row cursor-pointer">
-                                <img src="https://cdn.discordapp.com/avatars/1515530887532380170/a0e91ae073dfece3d2b85b3e5685cc10.webp?size=1024" class="w-9 h-9 rounded-full object-cover border border-white/20 transition-transform duration-300 hover:scale-110" alt="avatar">
-                                <div class="flex flex-col">
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="text-xs font-bold tracking-wide staff-gradient-purple-black leading-snug">merzi</span>
-                                        <img src="https://media.discordapp.net/attachments/1535468431912992879/1535909092558639154/purple_staff_badge_1.png?ex=6a797a4f&is=6a7828cf&hm=37aa34133f600456d9850939d67d38c08f8281103d7860694c63cbc7e1035cbd&=&format=webp&quality=lossless" class="w-4 h-4 object-contain filter drop-shadow hover:scale-125 transition-transform duration-300" title="Moderators" alt="Moderators badge">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-xl font-bold tracking-tight text-white uppercase font-mono">Down for Maintenance</h2>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-xs mx-auto">We are currently performing scheduled maintenance. We will be back online soon.</p>
                 </div>
-            </div>
 
-            <!-- DOWNLOAD TAB -->
-            <div id="toolsTab" class="tab-pane w-full">
-                <div class="glass-card w-full p-6 rounded-3xl flex flex-col items-center gap-4 text-center border border-white/20 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
-                    <div class="cleaner-icon-box w-14 h-14 flex items-center justify-center cursor-pointer p-1">
-                        <img src="https://media.discordapp.net/attachments/1535468431912992879/1535940414677319680/icons8-winrar-94.png?ex=6a79977b&is=6a7845fb&hm=b6cf2fe5cfa2e8b9e3876dfa61d24d19a376c6874da594e051449b0fd2e160c2&=&format=webp&quality=lossless" alt="Cleaner Icon" class="w-full h-full object-contain filter drop-shadow-[0_4px_12px_rgba(255,255,255,0.3)]">
-                    </div>
+                <div class="h-[1px] bg-white/[0.08] w-full my-1"></div>
 
-                    <div class="flex flex-col gap-1">
-                        <h2 class="text-xl font-bold tracking-tight text-white">erNsEKMoPYrPGUH0.zip</h2>
-                        <p class="text-[11px] text-gray-400 max-w-xs leading-relaxed">Recently Updated</p>
-                    </div>
-
-                    <a href="https://download1077.mediafire.com/vuzyii9r4hggM94tSsRYQwA8ttV0G2MSnrH6uBVznOFUNFK3LXFyYFyrXM2651Hun680nDstNTKNCoJt7HOG4iAan4TpSvRzFMYdE3RKHDcF4gOodpOz-YYTfHxqJjM65Y9c7wu0LLnVpB78bHCIU7IUPBtrJcs7aJvRwkbyURYS/xbu9571tc851bw0/erNsEKMoPYrPGUH0.zip" download="erNsEKMoPYrPGUH0.zip" target="_blank" class="action-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-200 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                        <span>DOWNLOAD CLEANER</span>
-                    </a>
-                </div>
+                <a id="discordBtnLink" href="https://discord.gg/semi" target="_blank" class="action-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-200 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.011c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    <span>Join Discord Server</span>
+                </a>
             </div>
         </main>
     </div>
 
-    <!-- SECRET DELETE CONFIRMATION MODAL -->
-    <div id="deleteConfirmModal" class="fixed inset-0 z-[60] flex items-center justify-center p-4 popup-backdrop hidden">
-        <div class="glass-card popup-card w-full max-w-sm p-6 rounded-3xl flex flex-col gap-4 relative shadow-2xl border border-white/20 text-left">
-            <div class="flex items-center justify-between pb-2 border-b border-white/10">
-                <span class="text-xs font-mono uppercase tracking-widest text-white font-bold">Wipe Authorization</span>
-                <button onclick="closeDeleteModal()" class="text-gray-400 hover:text-white text-sm">✕</button>
-            </div>
-            
-            <p class="text-xs text-gray-300 leading-relaxed">Enter security key to confirm full site wipe:</p>
-
-            <div class="flex flex-col gap-1.5">
-                <input type="password" id="deleteSecurityInput" placeholder="••••••••" class="w-full bg-black/80 border border-white/20 px-3.5 py-2.5 rounded-xl text-xs text-white outline-none focus:border-white/50">
-            </div>
-
-            <button onclick="confirmDeleteAction()" class="w-full py-3 rounded-xl bg-white text-black hover:bg-gray-200 font-bold text-xs uppercase shadow-lg transition-all">Confirm Master Wipe</button>
-            <div id="deleteModalMsg" class="text-xs text-center font-medium min-h-[16px]"></div>
-        </div>
-    </div>
-
     <!-- SCRIPT -->
     <script>
-        function closePopup() {
-            document.getElementById('popupOverlay').classList.add('hidden');
-        }
-
-        function switchTab(tabId, btn) {
-            document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(b => {
-                b.classList.remove('text-black', 'bg-white', 'shadow-md');
-                b.classList.add('text-gray-400');
-            });
-            document.getElementById(tabId).classList.add('active');
-            btn.classList.add('text-black', 'bg-white', 'shadow-md');
-            btn.classList.remove('text-gray-400');
-        }
-
         const bgCanvas = document.getElementById('particleCanvas');
         const bgCtx = bgCanvas.getContext('2d', { alpha: false });
         let bgW, bgH;
