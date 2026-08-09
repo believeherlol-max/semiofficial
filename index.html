@@ -761,18 +761,13 @@
         // SERVER/DATABASE FETCH AND SAVE LOGIC
         async function loadData() {
             try {
-                // Fetch state via JSONBin cloud storage or generic sync endpoint
-                const res = await fetch('https://api.jsonbin.io/v3/b/660f855de41b4d34e4e377f8/latest', {
-                    headers: { 'X-Master-Key': '$2a$10$YourSyncKeyPlaceholder' }
-                });
+                const res = await fetch('/api/site-data');
                 if (res.ok) {
-                    const json = await res.json();
-                    if (json.record) {
-                        siteData = { ...defaultData, ...json.record };
-                    }
+                    const fetchedData = await res.json();
+                    siteData = { ...defaultData, ...fetchedData };
                 }
             } catch (err) {
-                // Fallback to local cache if offline
+                // Fallback to local cache if no active backend server is connected
                 const local = localStorage.getItem('semi_official_data_v5');
                 if (local) siteData = JSON.parse(local);
             }
@@ -787,21 +782,18 @@
         }
 
         async function saveData() {
-            // Save locally immediately
+            // Save locally
             localStorage.setItem('semi_official_data_v5', JSON.stringify(siteData));
             
-            // Sync globally via cloud store so changes apply for everyone[cite: 4]
+            // Sync to global server for all users/reloads
             try {
-                await fetch('https://api.jsonbin.io/v3/b/660f855de41b4d34e4e377f8', {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Master-Key': '$2a$10$YourSyncKeyPlaceholder'
-                    },
+                await fetch('/api/site-data', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(siteData)
                 });
             } catch (err) {
-                console.warn("Cloud sync network fallback active.");
+                // Backend API missing or operating purely in static context
             }
 
             applyDataToDOM();
