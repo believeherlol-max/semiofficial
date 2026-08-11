@@ -1,217 +1,361 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NULL_POINTER_EXCEPTION // 0xFFFFFFFF</title>
+    <title>‎ </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            cursor: none;
+        :root {
+            --bg-dark: #000000;
+            --accent-glow: rgba(255, 255, 255, 0.15);
+            --accent-border: rgba(255, 255, 255, 0.1);
         }
-        body, html {
-            width: 100%;
-            height: 100vh;
-            background-color: #000;
-            overflow: hidden;
-            font-family: 'Courier New', Courier, monospace;
-            perspective: 1000px;
-        }
-        .hyper-strobe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 99999;
-            pointer-events: none;
-            mix-blend-mode: exclusion;
-            animation: seizureStrobe 0.03s infinite;
-        }
-        @keyframes seizureStrobe {
-            0% { background-color: #000; filter: invert(0); }
-            20% { background-color: #ff0000; filter: invert(1) contrast(500%); }
-            40% { background-color: #ffffff; filter: invert(0) brightness(300%); }
-            60% { background-color: #00ff00; filter: invert(1) hue-rotate(180deg); }
-            80% { background-color: #0000ff; filter: contrast(1000%); }
-            100% { background-color: #ff00ff; filter: invert(1); }
-        }
-        .screen-shake {
-            animation: violentShake 0.05s infinite;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-        @keyframes violentShake {
-            0% { transform: translate(5px, 5px) rotate(0deg) scale(1.05); }
-            20% { transform: translate(-8px, 4px) rotate(-2deg) scale(1.08); }
-            40% { transform: translate(6px, -6px) rotate(1.5deg) scale(0.98); }
-            60% { transform: translate(-4px, -5px) rotate(-1deg) scale(1.03); }
-            80% { transform: translate(7px, 8px) rotate(2deg) scale(1.02); }
-            100% { transform: translate(-5px, -3px) rotate(0deg) scale(1); }
-        }
-        .gore-element {
-            position: fixed;
-            z-index: 40000;
-            pointer-events: none;
-            mix-blend-mode: hard-light;
-        }
-        .jumpscare-face {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(3);
+
+        html, body {
+            background-color: var(--bg-dark);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             width: 100vw;
             height: 100vh;
-            z-index: 80000;
-            opacity: 0;
-            pointer-events: none;
-            animation: faceFlash 0.1s infinite alternate;
-            filter: contrast(500%) invert(1) drop-shadow(0 0 50px red);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+            user-select: none;
         }
-        @keyframes faceFlash {
-            0% { opacity: 0.95; transform: translate(-52%, -48%) scale(3.2) rotate(-8deg); }
-            100% { opacity: 0.2; transform: translate(-48%, -52%) scale(2.8) rotate(8deg); }
+
+        .page-enter {
+            animation: smoothFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            will-change: opacity, transform, filter;
         }
-        .firearm-overlay {
-            position: fixed;
-            bottom: -20px;
-            right: -20px;
-            width: 70vw;
-            height: 70vh;
-            z-index: 50000;
-            pointer-events: none;
-            filter: drop-shadow(0 0 20px #ff0000) invert(1);
-            animation: gunRecoil 0.08s infinite;
+
+        @keyframes smoothFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(16px) scale(0.97);
+                filter: blur(24px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
         }
-        @keyframes gunRecoil {
-            0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-15px, -25px) rotate(-3deg); }
-            100% { transform: translate(10px, 15px) rotate(2deg); }
-        }
-        .static-noise {
+
+        canvas {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,0,0,0.2) 0%, rgba(0,0,0,0.9) 90%);
-            z-index: 30000;
-            pointer-events: none;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: auto;
         }
-        .terminal-overlay {
-            position: absolute;
-            top: 10%;
-            left: 5%;
-            color: #ff0033;
-            font-size: 1.1rem;
-            z-index: 60000;
-            text-shadow: 2px 2px 0px #000;
-            line-height: 1.4;
-            max-width: 90vw;
-            word-break: break-all;
+
+        #particleCanvas { z-index: 0; }
+
+        .glass-card {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(40px) saturate(140%);
+            -webkit-backdrop-filter: blur(40px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 1),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .blood-drip {
-            position: absolute;
-            background: #ff0000;
-            width: 4px;
-            z-index: 45000;
-            animation: dripFall 0.8s linear infinite;
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 45px 110px -15px rgba(0, 0, 0, 1),
+                        0 0 40px rgba(255, 255, 255, 0.15),
+                        inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
-        @keyframes dripFall {
-            0% { top: 0; height: 10px; opacity: 1; }
-            100% { top: 100vh; height: 150px; opacity: 0; }
+
+        .tiny-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .tiny-dot-orange {
+            background-color: #f97316;
+            box-shadow: 0 0 16px rgba(249, 115, 22, 0.9);
+            animation: pulseGlow 2.8s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.5; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        .action-btn {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .action-btn:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.25);
+        }
+
+        .action-btn-secondary {
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .action-btn-secondary:hover {
+            transform: translateY(-2px) scale(1.02);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
-<body class="hyper-strobe">
+<body class="w-screen h-screen flex flex-col items-center justify-center p-6 selection:bg-white selection:text-black relative page-enter overflow-hidden bg-black">
 
-    <div class="screen-shake">
-        <div class="static-noise"></div>
-        <div class="terminal-overlay" id="chaosTerminal"></div>
-        <div id="hyperChaosContainer"></div>
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- MAIN CARD -->
+    <div class="w-full max-w-md mx-auto flex flex-col items-center gap-6 relative z-10 text-center my-auto pointer-events-auto">
+        <main class="w-full">
+            <div class="glass-card w-full p-8 rounded-3xl flex flex-col items-center gap-5 text-center">
+                <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-white/[0.03] border border-white/10 shadow-inner">
+                    <div class="tiny-dot tiny-dot-orange"></div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                    <h2 class="text-xl font-bold tracking-tight text-white uppercase font-mono">Down for Maintenance</h2>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-xs mx-auto">Something big is coming!! Please be patient. THIS IS NOT SCHEDULED and may be down for a week or more.</p>
+                </div>
+
+                <div class="h-[1px] bg-white/[0.08] w-full my-1"></div>
+
+                <div class="flex flex-col w-full gap-2.5">
+                    <!-- Primary Discord Button -->
+                    <a id="discordBtnLink" href="https://discord.gg/semi" target="_blank" class="action-btn w-full py-3.5 rounded-2xl bg-white text-black hover:bg-gray-200 font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.011c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                        <span>Join Discord Server</span>
+                    </a>
+
+                    <!-- Florida Discord Button -->
+                    <a id="floridaDiscordBtnLink" href="https://discord.gg/florida" target="_blank" class="action-btn-secondary w-full py-3.5 rounded-2xl text-white font-bold text-[11px] tracking-wider uppercase flex items-center justify-center gap-2.5 shadow-xl">
+                        <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.011c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                        <span>Join Florida Discord</span>
+                    </a>
+                </div>
+            </div>
+        </main>
     </div>
 
+    <!-- SCRIPT -->
     <script>
-        // High-frequency terminal log injection with extremely aggressive phrasing
-        const terminal = document.getElementById('chaosTerminal');
-        const rawLogs = [
-            "CRITICAL_FAILURE: WEAPONS SYSTEM ARMED AND UNLOCKED",
-            "FATAL_EXCEPTION: TARGET VISUAL ACQUIRED VIA WEBCAM",
-            "BREACH DETECTED: ACCESSING SYSTEM MEMORY SECTORS 0x00 - 0xFF",
-            "WARNING: FIREARM ASSET DEPLOYED LOCALLY",
-            "OVERRIDING CORE INHIBITORS... THERE IS NO WAY OUT",
-            "MUTATING LOCAL FILES... ENCRYPTING BOOT SECTOR",
-            "CORRUPTION SPREADING ACROSS MASTER DISK",
-            "YOU CANNOT CLOSE THIS WINDOW. PROCESS LOCKED."
-        ];
+        const bgCanvas = document.getElementById('particleCanvas');
+        const bgCtx = bgCanvas.getContext('2d', { alpha: false });
+        let bgW, bgH;
 
-        setInterval(() => {
-            let line = rawLogs[Math.floor(Math.random() * rawLogs.length)];
-            terminal.innerHTML += `<br>>> ${line} [${Math.random().toString(16).substr(2, 8).toUpperCase()}]`;
-            if (terminal.childElementCount > 18) {
-                terminal.removeChild(terminal.firstChild);
+        let mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.targetX = e.clientX;
+            mouse.targetY = e.clientY;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouse.targetX = -1000;
+            mouse.targetY = -1000;
+        });
+
+        function resizeBgCanvas() {
+            bgW = bgCanvas.width = window.innerWidth;
+            bgH = bgCanvas.height = window.innerHeight;
+            initParticles();
+        }
+
+        let tropicalParticles = [];
+        function initParticles() {
+            tropicalParticles = [];
+            const count = Math.min(320, Math.floor((bgW * bgH) / 4000));
+            for (let i = 0; i < count; i++) {
+                tropicalParticles.push({
+                    x: Math.random() * bgW,
+                    y: Math.random() * bgH * 0.8,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: -Math.random() * 0.6 - 0.15,
+                    radius: Math.random() * 2.0 + 0.4,
+                    alpha: Math.random() * 0.7 + 0.15,
+                    pulseSpeed: Math.random() * 0.035 + 0.008,
+                    pulseAngle: Math.random() * Math.PI * 2
+                });
             }
-        }, 40);
+        }
 
-        // Continuous blood drip simulator
-        const container = document.getElementById('hyperChaosContainer');
-        setInterval(() => {
-            const drip = document.createElement('div');
-            drip.className = 'blood-drip';
-            drip.style.left = Math.random() * window.innerWidth + 'px';
-            drip.style.animationDuration = (Math.random() * 0.4 + 0.3) + 's';
-            container.appendChild(drip);
-            setTimeout(() => drip.remove(), 800);
-        }, 20);
+        let waterTime = 0;
 
-        // Rapid flashing SVG assets: Guns, Distorted Screaming Faces, Gore Skulls
-        const terrifyingAssets = [
-            // Distorted Screaming Skull / Face
-            `<svg viewBox="0 0 200 200" class="jumpscare-face"><path d="M50,20 Q100,0 150,20 Q190,70 180,130 Q170,190 100,190 Q30,190 20,130 Q10,70 50,20 Z" fill="#110000" stroke="#ff0000" stroke-width="6"/><circle cx="70" cy="80" r="18" fill="#ff0000"/><circle cx="130" cy="80" r="18" fill="#ff0000"/><path d="M80,130 Q100,170 120,130 Z" fill="#ff0000"/><line x1="40" y1="140" x2="160" y2="140" stroke="#fff" stroke-width="8"/><line x1="70" y1="130" x2="70" y2="160" stroke="#fff" stroke-width="4"/><line x1="100" y1="130" x2="100" y2="160" stroke="#fff" stroke-width="4"/><line x1="130" y1="130" x2="130" y2="160" stroke="#fff" stroke-width="4"/></svg>`,
-            // Assault Firearm Pointing Forward
-            `<svg viewBox="0 0 300 200" class="firearm-overlay"><path d="M10,120 L180,110 L200,90 L280,95 L290,120 L250,130 L240,160 L200,160 L210,130 L100,140 L60,180 L20,170 L50,130 Z" fill="#0f0f0f" stroke="#ff0000" stroke-width="5"/><circle cx="280" cy="108" r="8" fill="#ff0000"/><rect x="120" y="105" width="40" height="25" fill="#ff0000"/></svg>`,
-            // Glitching Gore / Hazard Icon
-            `<svg viewBox="0 0 100 100" class="jumpscare-face" style="filter: hue-rotate(270deg) contrast(800%);"><polygon points="50,10 95,90 5,90" fill="#ff0000"/><text x="40" y="75" font-size="55" fill="#000" font-weight="bold">!</text></svg>`
-        ];
+        function drawPalmTree(ctx, baseX, baseY, scale, bendRight = true, depthAlpha = 1.0) {
+            ctx.save();
+            ctx.translate(baseX, baseY);
+            ctx.scale(scale, scale);
+            ctx.globalAlpha = depthAlpha;
 
-        setInterval(() => {
-            const assetDiv = document.createElement('div');
-            assetDiv.innerHTML = terrifyingAssets[Math.floor(Math.random() * terrifyingAssets.length)];
-            container.appendChild(assetDiv);
-            setTimeout(() => assetDiv.remove(), 120);
-        }, 80);
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            const bend = bendRight ? 30 : -30;
+            ctx.quadraticCurveTo(bend * 0.5, -120, bend, -240);
+            ctx.quadraticCurveTo(bend * 0.5 + (bendRight ? 8 : -8), -120, 10, 0);
+            ctx.fillStyle = '#050505';
+            ctx.fill();
 
-        // Spawn chaotic flashing raw warning boxes covering random coordinates
-        const warningPhrases = [
-            "FATAL_ERROR: WEAPONS SYSTEM ACTIVE",
-            "BODY_CAM_FEED_ONLINE",
-            "UNABLE_TO_ABORT",
-            "TARGET_LOCKED_ON_YOU",
-            "SYSTEM_CORRUPTED_GORE",
-            "EXEC_OVERRIDE_999"
-        ];
+            const cx = bend;
+            const cy = -240;
 
-        setInterval(() => {
-            const box = document.createElement('div');
-            box.style.position = 'fixed';
-            box.style.top = Math.random() * window.innerHeight + 'px';
-            box.style.left = Math.random() * window.innerWidth + 'px';
-            box.style.background = Math.random() > 0.5 ? '#ff0000' : '#ffffff';
-            box.style.color = '#000';
-            box.style.padding = '8px';
-            box.style.fontSize = '0.9rem';
-            box.style.fontWeight = 'bold';
-            box.style.zIndex = '90000';
-            box.style.pointerEvents = 'none';
-            box.innerText = warningPhrases[Math.floor(Math.random() * warningPhrases.length)];
-            container.appendChild(box);
-            setTimeout(() => box.remove(), 90);
-        }, 50);
+            const frondAngles = bendRight 
+                ? [-160, -125, -90, -50, -10, 160, 200, 235] 
+                : [-170, -130, -90, -50, -15, 20, 210, 245];
+
+            frondAngles.forEach((angle, idx) => {
+                ctx.save();
+                ctx.translate(cx, cy);
+                ctx.rotate((angle * Math.PI) / 180);
+
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                const curvePower = 40 + (idx % 3) * 10;
+                ctx.quadraticCurveTo(curvePower, -25, curvePower * 2.2, 30);
+                ctx.quadraticCurveTo(curvePower * 0.8, -8, 0, 0);
+                ctx.fillStyle = '#0a0a0a';
+                ctx.fill();
+
+                ctx.beginPath();
+                const ribCount = 14;
+                for (let i = 1; i <= ribCount; i++) {
+                    const progress = i / ribCount;
+                    const rx = progress * (curvePower * 2.0);
+                    const ry = Math.sin(progress * Math.PI) * -15 + (progress * 25);
+                    ctx.moveTo(rx, ry);
+                    ctx.lineTo(rx + (bendRight ? 6 : -6), ry + 16);
+                }
+                ctx.strokeStyle = '#020202';
+                ctx.lineWidth = 1.5;
+                ctx.stroke();
+
+                ctx.restore();
+            });
+
+            ctx.restore();
+        }
+
+        function animateBg() {
+            waterTime += 0.022;
+
+            mouse.x += (mouse.targetX - mouse.x) * 0.08;
+            mouse.y += (mouse.targetY - mouse.y) * 0.08;
+
+            let skyGrad = bgCtx.createLinearGradient(0, 0, 0, bgH);
+            skyGrad.addColorStop(0, '#000000');
+            skyGrad.addColorStop(0.35, '#050505');
+            skyGrad.addColorStop(0.65, '#0c0c0c');
+            skyGrad.addColorStop(0.76, '#141414');
+            skyGrad.addColorStop(1, '#000000');
+            bgCtx.fillStyle = skyGrad;
+            bgCtx.fillRect(0, 0, bgW, bgH);
+
+            const waterY = bgH * 0.74;
+
+            let horizonGlow = bgCtx.createRadialGradient(bgW * 0.5, waterY, 20, bgW * 0.5, waterY, bgW * 0.75);
+            horizonGlow.addColorStop(0, 'rgba(255, 255, 255, 0.16)');
+            horizonGlow.addColorStop(0.35, 'rgba(200, 200, 200, 0.07)');
+            horizonGlow.addColorStop(0.7, 'rgba(60, 60, 60, 0.02)');
+            horizonGlow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            bgCtx.fillStyle = horizonGlow;
+            bgCtx.fillRect(0, 0, bgW, bgH);
+
+            if (mouse.x > 0 && mouse.y > 0) {
+                let torch = bgCtx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 320);
+                torch.addColorStop(0, 'rgba(255, 255, 255, 0.11)');
+                torch.addColorStop(0.5, 'rgba(160, 160, 160, 0.04)');
+                torch.addColorStop(1, 'rgba(0, 0, 0, 0)');
+                bgCtx.fillStyle = torch;
+                bgCtx.beginPath();
+                bgCtx.arc(mouse.x, mouse.y, 320, 0, Math.PI * 2);
+                bgCtx.fill();
+            }
+
+            for (let p of tropicalParticles) {
+                p.y += p.vy;
+                p.x += p.vx + Math.sin(waterTime + p.y * 0.01) * 0.18;
+                p.pulseAngle += p.pulseSpeed;
+                
+                const currentAlpha = p.alpha * (0.6 + 0.4 * Math.sin(p.pulseAngle));
+
+                if (p.y < 0) { p.y = waterY; p.x = Math.random() * bgW; }
+                if (p.x < 0) p.x = bgW;
+                if (p.x > bgW) p.x = 0;
+
+                bgCtx.beginPath();
+                bgCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                bgCtx.fillStyle = `rgba(255, 255, 255, ${currentAlpha * 0.8})`;
+                bgCtx.fill();
+            }
+
+            let waterGrad = bgCtx.createLinearGradient(0, waterY, 0, bgH);
+            waterGrad.addColorStop(0, '#0a0a0a');
+            waterGrad.addColorStop(0.4, '#040404');
+            waterGrad.addColorStop(1, '#000000');
+            bgCtx.fillStyle = waterGrad;
+            bgCtx.fillRect(0, waterY, bgW, bgH - waterY);
+
+            bgCtx.beginPath();
+            bgCtx.moveTo(0, waterY);
+            bgCtx.lineTo(bgW, waterY);
+            bgCtx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
+            bgCtx.lineWidth = 1.4;
+            bgCtx.stroke();
+
+            for (let i = 0; i < 24; i++) {
+                let lineY = waterY + 4 + (i * i * 0.72);
+                if (lineY > bgH) break;
+
+                bgCtx.beginPath();
+                bgCtx.moveTo(0, lineY);
+                for (let x = 0; x <= bgW; x += 30) {
+                    let yOffset = Math.sin((x * 0.012) + waterTime * 1.3 + i * 0.8) * (0.9 + i * 0.2);
+                    bgCtx.lineTo(x, lineY + yOffset);
+                }
+                let alpha = Math.max(0, 0.18 - (i * 0.0065));
+                bgCtx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
+                bgCtx.lineWidth = 1;
+                bgCtx.stroke();
+            }
+
+            drawPalmTree(bgCtx, bgW * 0.06, waterY + 25, 0.85, true, 0.8);
+            drawPalmTree(bgCtx, bgW * 0.01, waterY + 50, 1.2, true, 1.0);
+            drawPalmTree(bgCtx, bgW * 0.93, waterY + 30, 0.95, false, 0.8);
+            drawPalmTree(bgCtx, bgW * 0.98, waterY + 55, 1.35, false, 1.0);
+
+            requestAnimationFrame(animateBg);
+        }
+
+        resizeBgCanvas();
+        requestAnimationFrame(animateBg);
+        window.addEventListener('resize', resizeBgCanvas);
     </script>
 </body>
 </html>
